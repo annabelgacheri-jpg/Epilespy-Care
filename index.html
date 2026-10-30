@@ -1,0 +1,517 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>EpilepsyCare | Health Support System</title>
+
+    <!-- Connect the CSS file -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- SIDEBAR NAVIGATION -->
+        <aside class="sidebar">
+
+            <h2>EpilepsyCare</h2>
+             <p>Track • Manage • Live Better</p>
+
+            <nav>
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#quick-assist">Quick Assist</a></li>
+                    <li><a href="#medication">Medication Reminders</a></li>
+                    <li><a href="#side-effects">Side Effects Tracking</a></li>
+                    <li><a href="#consultation">Consultation Summary</a></li>
+                    <li><a href="#seizure-log">Seizure &amp; Symptom Log</a></li>
+                    <li><a href="#settings">Settings</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+
+            <p class="sidebar-note">
+                You are not alone.<br>
+                Support is always within reach.
+            </p>
+
+        </aside>
+
+
+        <!-- MAIN CONTENT -->
+        <main class="main-content">
+
+            <!-- HEADER -->
+            <header class="page-header">
+                <h2>My Health Dashboard</h2>
+                <p>Welcome to your personal health support space.</p>
+            </header>
+
+
+            <!-- HOME / WELCOME SECTION -->
+            <section class="welcome" id="home">
+
+                <h1>Welcome to EpilepsyCare</h1>
+
+                <p>
+                    Your personal medication and health support system.
+                </p>
+
+                <p>
+                    Stay organised, record your health information,
+                    and prepare for your consultations.
+                </p>
+
+            </section>
+
+
+            <!-- SIX FEATURE CARDS -->
+            <section class="cards">
+
+                <!-- QUICK ASSIST -->
+                <article class="card quick-assist" id="quick-assist">
+
+                    <h2>Quick Assist</h2>
+
+                    <p>
+                        Prepare a request for help from your designated
+                        caregiver when you need assistance.
+                    </p>
+
+                    <a href="#quick-assist-form" class="button">
+                        Request Help
+                    </a>
+
+                </article>
+
+
+                <!-- MEDICATION REMINDERS -->
+                <article class="card medication" id="medication">
+
+                    <h2>Medication Reminders</h2>
+
+                    <p>
+                        Organise your medication schedule and record
+                        the doses you have taken.
+                    </p>
+
+                    <a href="#medication-form" class="button">
+                        Manage Medication
+                    </a>
+
+                </article>
+
+
+                <!-- SIDE EFFECTS TRACKING -->
+                <article class="card side-effects" id="side-effects">
+
+                    <h2>Side Effects Tracking</h2>
+
+                    <p>
+                        Record any side effects you experience while
+                        taking your prescribed medication.
+                    </p>
+
+                    <a href="#side-effects-form" class="button">
+                        Record Side Effects
+                    </a>
+
+                </article>
+
+
+                <!-- CONSULTATION SUMMARY -->
+                <article class="card consultation" id="consultation">
+
+                    <h2>Consultation Summary</h2>
+
+                    <p>
+                        Review your medication history, symptoms,
+                        seizures, and side-effect records.
+                    </p>
+
+                    <a href="#summary-section" class="button">
+                        View Summary
+                    </a>
+
+                </article>
+
+
+                <!-- SEIZURE AND SYMPTOM LOG -->
+                <article class="card seizure-log" id="seizure-log">
+
+                    <h2>Seizure &amp; Symptom Log</h2>
+
+                    <p>
+                        Record seizure events, symptoms, dates,
+                        duration, and other relevant notes.
+                    </p>
+
+                    <a href="#seizure-form" class="button">
+                        Add Health Record
+                    </a>
+
+                </article>
+
+
+                <!-- SETTINGS AND CONTACT -->
+                <article class="card settings" id="settings">
+
+                    <h2>Settings &amp; Contact</h2>
+
+                    <p>
+                        Manage your profile, preferences, privacy,
+                        and designated caregiver details.
+                    </p>
+
+                    <a href="#settings-form" class="button">
+                        Manage Settings
+                    </a>
+
+                </article>
+
+            </section>
+
+
+            <!-- QUICK ASSIST FORM -->
+            <section class="content-section" id="quick-assist-form">
+
+                <h2>Quick Assist Request</h2>
+
+                <p>
+                    Prepare a help request for your designated caregiver.
+                </p>
+
+                <form action="#" method="post">
+
+                    <label for="help-message">
+                        Message to caregiver
+                    </label>
+
+                    <textarea
+                        id="help-message"
+                        name="help_message"
+                        placeholder="Describe the assistance you need..."
+                        required></textarea>
+
+                    <button type="submit" class="button">
+                        Prepare Help Request
+                    </button>
+
+                </form>
+
+                <p class="notice">
+                    This form does not send an alert. Contact your
+                    caregiver directly if you need immediate assistance.
+                </p>
+
+            </section>
+
+
+            <!-- MEDICATION FORM -->
+            <section class="content-section" id="medication-form">
+
+                <h2>Medication Reminders</h2>
+
+                <p>Enter your prescribed medication schedule.</p>
+
+                <form action="#" method="post">
+
+                    <label for="medicine-name">Medication Name</label>
+                    <input
+                        type="text"
+                        id="medicine-name"
+                        name="medicine_name"
+                        placeholder="Enter medication name"
+                        required>
+
+                    <label for="dosage">Dosage</label>
+                    <input
+                        type="text"
+                        id="dosage"
+                        name="dosage"
+                        placeholder="As prescribed">
+
+                    <label for="dose-time">Scheduled Time</label>
+                    <input
+                        type="time"
+                        id="dose-time"
+                        name="dose_time"
+                        required>
+
+                    <label for="dose-frequency">Frequency</label>
+                    <select id="dose-frequency" name="dose_frequency">
+                        <option value="">Select frequency</option>
+                        <option value="once">Once daily</option>
+                        <option value="twice">Twice daily</option>
+                        <option value="three-times">Three times daily</option>
+                        <option value="other">Other prescribed schedule</option>
+                    </select>
+
+                    <label for="dose-status">Dose Status</label>
+                    <select id="dose-status" name="dose_status">
+                        <option value="">Select status</option>
+                        <option value="taken">Taken</option>
+                        <option value="missed">Missed</option>
+                        <option value="pending">Not yet taken</option>
+                    </select>
+
+                    <button type="submit" class="button">
+                        Save Medication Details
+                    </button>
+
+                </form>
+
+                <p class="notice">
+                    This form does not save data or trigger timed reminders yet.
+                    Follow your healthcare professional's prescribed schedule.
+                </p>
+
+            </section>
+
+
+            <!-- SIDE EFFECTS FORM -->
+            <section class="content-section" id="side-effects-form">
+
+                <h2>Side Effects Tracking</h2>
+
+                <p>Record side effects you have experienced.</p>
+
+                <form action="#" method="post">
+
+                    <label for="effect-name">Side Effect</label>
+                    <input
+                        type="text"
+                        id="effect-name"
+                        name="effect_name"
+                        placeholder="Describe the side effect"
+                        required>
+
+                    <label for="effect-date">Date Experienced</label>
+                    <input
+                        type="date"
+                        id="effect-date"
+                        name="effect_date"
+                        required>
+
+                    <label for="effect-severity">Severity</label>
+                    <select id="effect-severity" name="effect_severity">
+                        <option value="">Select severity</option>
+                        <option value="mild">Mild</option>
+                        <option value="moderate">Moderate</option>
+                        <option value="severe">Severe</option>
+                    </select>
+
+                    <label for="effect-notes">Additional Notes</label>
+                    <textarea
+                        id="effect-notes"
+                        name="effect_notes"
+                        placeholder="Enter any other details"></textarea>
+
+                    <button type="submit" class="button">
+                        Save Side Effect
+                    </button>
+
+                </form>
+
+            </section>
+
+
+            <!-- SEIZURE AND SYMPTOM LOG FORM -->
+            <section class="content-section" id="seizure-form">
+
+                <h2>Seizure &amp; Symptom Log</h2>
+
+                <p>Record a seizure event or other symptoms.</p>
+
+                <form action="#" method="post">
+
+                    <label for="record-type">Record Type</label>
+                    <select id="record-type" name="record_type" required>
+                        <option value="">Select record type</option>
+                        <option value="seizure">Seizure</option>
+                        <option value="symptom">Symptom</option>
+                    </select>
+
+                    <label for="event-date">Date</label>
+                    <input
+                        type="date"
+                        id="event-date"
+                        name="event_date"
+                        required>
+
+                    <label for="event-time">Time</label>
+                    <input
+                        type="time"
+                        id="event-time"
+                        name="event_time">
+
+                    <label for="event-duration">
+                        Duration (if applicable)
+                    </label>
+                    <input
+                        type="text"
+                        id="event-duration"
+                        name="event_duration"
+                        placeholder="e.g. 2 minutes">
+
+                    <label for="event-symptoms">Symptoms or Description</label>
+                    <textarea
+                        id="event-symptoms"
+                        name="event_symptoms"
+                        placeholder="Describe what happened..."
+                        required></textarea>
+
+                    <label for="event-notes">Additional Notes</label>
+                    <textarea
+                        id="event-notes"
+                        name="event_notes"
+                        placeholder="Enter any additional information"></textarea>
+
+                    <button type="submit" class="button">
+                        Save Health Record
+                    </button>
+
+                </form>
+
+            </section>
+
+
+            <!-- CONSULTATION SUMMARY -->
+            <section class="content-section" id="summary-section">
+
+                <h2>Consultation Summary</h2>
+
+                <p>
+                    Review the following information before your next
+                    healthcare appointment.
+                </p>
+
+                <div class="summary-card">
+                    <h3>Medication History</h3>
+                    <p>
+                        Your medication names, schedules, and dose records
+                        will appear here once data storage is implemented.
+                    </p>
+                </div>
+
+                <div class="summary-card">
+                    <h3>Seizure &amp; Symptom History</h3>
+                    <p>
+                        Your recorded seizures and symptoms will appear here
+                        once the application is connected to a database.
+                    </p>
+                </div>
+
+                <div class="summary-card">
+                    <h3>Side Effects History</h3>
+                    <p>
+                        Your recorded side effects will appear here once
+                        records can be saved and retrieved.
+                    </p>
+                </div>
+
+                <p class="notice">
+                    Review the summary and choose what information to share
+                    with your clinician.
+                </p>
+
+            </section>
+
+
+            <!-- SETTINGS FORM -->
+            <section class="content-section" id="settings-form">
+
+                <h2>Settings &amp; Profile</h2>
+
+                <form action="#" method="post">
+
+                    <label for="patient-name">Name</label>
+                    <input
+                        type="text"
+                        id="patient-name"
+                        name="patient_name"
+                        placeholder="Enter your name">
+
+                    <label for="patient-email">Email Address</label>
+                    <input
+                        type="email"
+                        id="patient-email"
+                        name="patient_email"
+                        placeholder="Enter your email">
+
+                    <label for="caregiver-name">Caregiver Name</label>
+                    <input
+                        type="text"
+                        id="caregiver-name"
+                        name="caregiver_name"
+                        placeholder="Enter caregiver name">
+
+                    <label for="caregiver-phone">Caregiver Phone</label>
+                    <input
+                        type="tel"
+                        id="caregiver-phone"
+                        name="caregiver_phone"
+                        placeholder="Enter caregiver phone number">
+
+                    <label for="sharing-consent">
+                        Health information sharing
+                    </label>
+                    <select id="sharing-consent" name="sharing_consent">
+                        <option value="private">
+                            Keep my health records private
+                        </option>
+                        <option value="share-by-choice">
+                            I may choose to share selected records
+                        </option>
+                    </select>
+
+                    <button type="submit" class="button">
+                        Save Preferences
+                    </button>
+
+                </form>
+
+            </section>
+
+
+            <!-- CONTACT SECTION -->
+            <section class="content-section" id="contact">
+
+                <h2>Contact &amp; Support</h2>
+
+                <p>
+                    Keep your designated caregiver's contact details
+                    up to date so you can reach them when needed.
+                </p>
+
+                <p>
+                    For urgent medical assistance, contact your local
+                    emergency service or healthcare provider.
+                </p>
+
+                <p>
+                    EpilepsyCare is a health-record and medication-support
+                    tool. It does not diagnose epilepsy or replace
+                    professional medical advice.
+                </p>
+
+            </section>
+
+
+            <!-- FOOTER -->
+            <footer>
+                <p>EpilepsyCare | Support • Safety • Independence</p>
+                <p>Your health records belong to you.</p>
+            </footer>
+
+        </main>
+
+    </div>
+
+</body>
+</html>
