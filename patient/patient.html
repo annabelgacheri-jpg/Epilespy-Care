@@ -1,0 +1,510 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- BASIC PAGE INFORMATION -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Patient Dashboard | Epilepsy Care</title>
+
+
+    <!-- CSS STYLING -->
+
+    <style>
+
+        /* 1. GENERAL PAGE STYLING */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+            line-height: 1.6;
+        }
+
+
+        /* 2. HEADER SECTION */
+
+        header {
+            background-color: #173b65;
+            color: white;
+            padding: 18px 5%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo h2 {
+            font-size: 24px;
+        }
+
+        header nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+        header nav a:hover {
+            color: #a9d5ff;
+        }
+
+
+        /* 3. MAIN PAGE CONTAINER */
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+
+
+        /* 4. WELCOME SECTION */
+
+        .welcome {
+            background-color: #e3efff;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .welcome h1 {
+            color: #173b65;
+            margin-bottom: 10px;
+        }
+
+        .welcome p {
+            font-size: 15px;
+        }
+
+
+        /* 5. SECTION HEADINGS */
+
+        .section-heading {
+            color: #173b65;
+            margin-bottom: 20px;
+        }
+
+
+        /* 6. MEDICATION SCHEDULE */
+
+        .schedule-section {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .schedule-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            gap: 15px;
+        }
+
+        .schedule-header h2 {
+            color: #173b65;
+        }
+
+        .add-button {
+            background-color: #1769aa;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .add-button:hover {
+            background-color: #104b7c;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 14px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #eef4fc;
+            color: #173b65;
+        }
+
+        .empty-message {
+            text-align: center;
+            color: #777;
+            padding: 25px;
+        }
+
+
+        /* 7. PATIENT FEATURES */
+
+        .features {
+            margin-bottom: 30px;
+        }
+
+        .feature-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .feature-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid #1769aa;
+        }
+
+        .feature-card h3 {
+            color: #173b65;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .feature-link {
+            display: inline-block;
+            background-color: #1769aa;
+            color: white;
+            padding: 9px 14px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .feature-link:hover {
+            background-color: #104b7c;
+        }
+
+
+        /* 8. FOOTER SECTION */
+
+        footer {
+            background-color: #173b65;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+
+        /* 9. RESPONSIVE DESIGN */
+
+        @media (max-width: 800px) {
+
+            .feature-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+        }
+
+        @media (max-width: 550px) {
+
+            header {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            header nav a {
+                margin: 0 7px;
+            }
+
+            .feature-container {
+                grid-template-columns: 1fr;
+            }
+
+            .schedule-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .container {
+                width: 94%;
+            }
+
+            th, td {
+                padding: 9px;
+                font-size: 12px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- 10. HEADER SECTION -->
+
+    <header>
+
+        <div class="logo">
+            <h2>Epilepsy Care</h2>
+        </div>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="patient.html">Dashboard</a>
+        </nav>
+
+    </header>
+
+
+
+    <!-- 11. MAIN CONTENT -->
+
+    <main class="container">
+
+
+        <!-- WELCOME SECTION -->
+
+        <section class="welcome">
+
+            <h1>Patient Dashboard</h1>
+
+            <p>
+                Welcome to your Epilepsy Care dashboard.
+                Manage your medication, record health information
+                and access your personal health history.
+            </p>
+
+        </section>
+
+
+
+        <!-- MEDICATION SCHEDULE SECTION -->
+
+        <section class="schedule-section">
+
+            <div class="schedule-header">
+
+                <h2>Today's Medication Schedule</h2>
+
+                <a href="medication.html" class="add-button">
+                    + Add Medication
+                </a>
+
+            </div>
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+                        <th>Medication</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                    </tr>
+
+                </thead>
+
+                <tbody>
+
+                    <tr>
+                        <td colspan="3" class="empty-message">
+                            No medication schedule has been added yet.
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+
+
+        <!-- PATIENT FEATURES SECTION -->
+
+        <section class="features">
+
+            <h2 class="section-heading">
+                Patient Services
+            </h2>
+
+
+            <div class="feature-container">
+
+
+                <!-- MEDICATION MANAGEMENT -->
+
+                <div class="feature-card">
+
+                    <h3>Medication Management</h3>
+
+                    <p>
+                        Add prescribed medication and manage
+                        your medication schedule.
+                    </p>
+
+                    <a href="medication.html" class="feature-link">
+                        Manage Medication
+                    </a>
+
+                </div>
+
+
+
+                <!-- HEALTH RECORDS -->
+
+                <div class="feature-card">
+
+                    <h3>Health Records</h3>
+
+                    <p>
+                        Record seizures and symptoms to maintain
+                        an organized health history.
+                    </p>
+
+                    <a href="health-records.html" class="feature-link">
+                        Record Health Information
+                    </a>
+
+                </div>
+
+
+
+                <!-- SIDE EFFECTS -->
+
+                <div class="feature-card">
+
+                    <h3>Side Effects Tracking</h3>
+
+                    <p>
+                        Record and review medication-related
+                        side effects.
+                    </p>
+
+                    <a href="side-effects.html" class="feature-link">
+                        Record Side Effects
+                    </a>
+
+                </div>
+
+
+
+                <!-- HELP REQUEST -->
+
+                <div class="feature-card">
+
+                    <h3>Emergency Help Request</h3>
+
+                    <p>
+                        Prepare a help request message for
+                        your designated caregiver.
+                    </p>
+
+                    <a href="help.html" class="feature-link">
+                        Request Help
+                    </a>
+
+                </div>
+
+
+
+                <!-- CONSULTATION SUMMARY -->
+
+                <div class="feature-card">
+
+                    <h3>Consultation Summary</h3>
+
+                    <p>
+                        Prepare a summary of your recorded
+                        health information for a clinic visit.
+                    </p>
+
+                    <a href="consultation.html" class="feature-link">
+                        View Summary
+                    </a>
+
+                </div>
+
+
+
+                <!-- PATIENT HISTORY -->
+
+                <div class="feature-card">
+
+                    <h3>Health History</h3>
+
+                    <p>
+                        Review your previously recorded
+                        medication and health information.
+                    </p>
+
+                    <a href="history.html" class="feature-link">
+                        View History
+                    </a>
+
+                </div>
+
+
+
+                <!-- MY DATA -->
+
+                <div class="feature-card">
+
+                    <h3>My Data</h3>
+
+                    <p>
+                        Manage your personal information
+                        and designated caregiver contact.
+                    </p>
+
+                    <a href="my-data.html" class="feature-link">
+                        Manage My Data
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- FOOTER SECTION -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Epilepsy Care System.
+            All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>

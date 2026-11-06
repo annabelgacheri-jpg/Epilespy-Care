@@ -1,0 +1,354 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medication Management | Epilepsy Care</title>
+
+    <style>
+        /* 1. GENERAL STYLING */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+        }
+
+        /* 2. HEADER */
+        header {
+            background-color: #2457a6;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        header h2 {
+            font-size: 23px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* 3. MAIN CONTAINER */
+        .container {
+            width: 86%;
+            max-width: 1100px;
+            margin: 35px auto;
+        }
+
+        .page-heading {
+            margin-bottom: 25px;
+        }
+
+        .page-heading h1 {
+            color: #2457a6;
+            margin-bottom: 10px;
+        }
+
+        .page-heading p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* 4. CONTENT CARDS */
+        .card {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .card h2 {
+            color: #2457a6;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        /* 5. FORM STYLING */
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+            background-color: white;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* 6. BUTTON */
+        .btn {
+            background-color: #2457a6;
+            color: white;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #193f7c;
+        }
+
+        /* 7. TABLE */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 14px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        th {
+            background-color: #edf3fc;
+            color: #2457a6;
+        }
+
+        .empty-message {
+            text-align: center;
+            color: #777;
+            padding: 25px;
+        }
+
+        .status {
+            background-color: #fff3cd;
+            color: #856404;
+            padding: 6px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+        }
+
+        /* 8. FOOTER */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            font-size: 13px;
+            margin-top: 30px;
+        }
+
+        /* 9. RESPONSIVE DESIGN */
+        @media (max-width: 650px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav a {
+                margin-left: 0;
+                margin-right: 12px;
+            }
+
+            .container {
+                width: 92%;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                padding: 18px;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h2>Epilepsy Care</h2>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="patient.html">Dashboard</a>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+
+        <!-- PAGE INTRODUCTION -->
+        <section class="page-heading">
+            <h1>Medication Management</h1>
+            <p>
+                Manage your medication details and keep track of your
+                prescribed medicines and dosage schedules.
+            </p>
+        </section>
+
+        <!-- ADD MEDICATION FORM -->
+        <section class="card">
+            <h2>Add Medication</h2>
+
+            <form>
+
+                <div class="form-group">
+                    <label for="medication-name">Medication Name</label>
+                    <input
+                        type="text"
+                        id="medication-name"
+                        placeholder="Enter medication name"
+                        required
+                    >
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="dosage">Dosage</label>
+                        <input
+                            type="text"
+                            id="dosage"
+                            placeholder="e.g. 500 mg"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="frequency">Frequency</label>
+                        <select id="frequency" required>
+                            <option value="">Select frequency</option>
+                            <option>Once a day</option>
+                            <option>Twice a day</option>
+                            <option>Three times a day</option>
+                            <option>As prescribed</option>
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="time">Medication Time</label>
+                        <input
+                            type="time"
+                            id="time"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="start-date">Start Date</label>
+                        <input
+                            type="date"
+                            id="start-date"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Additional Notes</label>
+                    <textarea
+                        id="notes"
+                        placeholder="Enter any additional medication instructions"
+                    ></textarea>
+                </div>
+
+                <button type="button" class="btn">
+                    Add Medication
+                </button>
+
+            </form>
+        </section>
+
+        <!-- MEDICATION SCHEDULE -->
+        <section class="card">
+            <h2>My Medication Schedule</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Medication</th>
+                        <th>Dosage</th>
+                        <th>Frequency</th>
+                        <th>Time</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td colspan="5" class="empty-message">
+                            No medication has been added yet.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- INFORMATION -->
+        <section class="card">
+            <h2>Medication Reminder Information</h2>
+
+            <p>
+                Keep your medication schedule updated and follow the
+                instructions provided by your healthcare professional.
+                Record your doses consistently.
+            </p>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Epilepsy Care System. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
