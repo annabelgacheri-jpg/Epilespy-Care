@@ -1,0 +1,282 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shared Patient Summaries | Epilepsy Care</title>
+
+    <style>
+        /* GENERAL STYLING */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+        }
+
+        /* HEADER */
+        header {
+            background-color: #2457a6;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* MAIN CONTAINER */
+        .container {
+            width: 86%;
+            max-width: 1200px;
+            margin: 35px auto;
+        }
+
+        /* PAGE INTRODUCTION */
+        .welcome {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .welcome h2 {
+            color: #2457a6;
+            margin-bottom: 12px;
+        }
+
+        .welcome p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* SEARCH SECTION */
+        .search-section {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .search-section h3 {
+            color: #2457a6;
+            margin-bottom: 15px;
+        }
+
+        .search-section input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        /* SUMMARY TABLE */
+        .table-section {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            overflow-x: auto;
+        }
+
+        .table-section h3 {
+            color: #2457a6;
+            margin-bottom: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 650px;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #eaf1fc;
+            color: #2457a6;
+        }
+
+        .status {
+            color: #666;
+            font-weight: bold;
+        }
+
+        /* INFORMATION CARD */
+        .information {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .information h3 {
+            color: #2457a6;
+            margin-bottom: 12px;
+        }
+
+        .information p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #2457a6;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 650px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 8px;
+            }
+
+            .container {
+                width: 92%;
+            }
+
+            .welcome,
+            .search-section,
+            .table-section,
+            .information {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Epilepsy Care System</h1>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="doctor.html">Dashboard</a>
+            <a href="login.html">Login</a>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+
+        <!-- INTRODUCTION -->
+        <section class="welcome">
+
+            <h2>Shared Patient Summaries</h2>
+
+            <p>
+                This page provides doctors with access to health
+                summaries that patients have chosen to share.
+                The summaries may contain medication information,
+                seizure history, health records and other relevant
+                patient information.
+            </p>
+
+        </section>
+
+        <!-- SEARCH SECTION -->
+        <section class="search-section">
+
+            <h3>Search Patient Summaries</h3>
+
+            <input
+                type="search"
+                placeholder="Search using patient name or patient ID"
+                aria-label="Search patient summaries"
+            >
+
+        </section>
+
+        <!-- SUMMARY TABLE -->
+        <section class="table-section">
+
+            <h3>Available Patient Summaries</h3>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Patient ID</th>
+                        <th>Patient Name</th>
+                        <th>Date Shared</th>
+                        <th>Summary Type</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td colspan="5">
+                            No patient summaries have been shared yet.
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <!-- INFORMATION SECTION -->
+        <section class="information">
+
+            <h3>Patient Privacy Information</h3>
+
+            <p>
+                Doctors should only access patient summaries
+                that have been shared with them by the patients.
+                Patient health information should be handled
+                confidentially and responsibly.
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Epilepsy Care System. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

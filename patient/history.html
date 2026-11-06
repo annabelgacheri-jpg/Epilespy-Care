@@ -1,0 +1,342 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health History | Epilepsy Care</title>
+
+    <style>
+        /* 1. GENERAL PAGE STYLING */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+        }
+
+        /* 2. HEADER */
+        header {
+            background-color: #2457a6;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        header h2 {
+            font-size: 23px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* 3. MAIN CONTAINER */
+        .container {
+            width: 86%;
+            max-width: 1100px;
+            margin: 35px auto;
+        }
+
+        .page-heading {
+            margin-bottom: 25px;
+        }
+
+        .page-heading h1 {
+            color: #2457a6;
+            margin-bottom: 10px;
+        }
+
+        .page-heading p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* 4. SUMMARY CARDS */
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        .summary-card {
+            background-color: white;
+            padding: 22px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .summary-card h3 {
+            color: #2457a6;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .summary-card p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* 5. CONTENT CARDS */
+        .card {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .card h2 {
+            color: #2457a6;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        /* 6. FILTER SECTION */
+        .filter-group {
+            margin-bottom: 20px;
+        }
+
+        .filter-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .filter-group select,
+        .filter-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .filter-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* 7. HISTORY TABLE */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 14px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        th {
+            background-color: #edf3fc;
+            color: #2457a6;
+        }
+
+        .empty-message {
+            text-align: center;
+            color: #777;
+            padding: 25px;
+        }
+
+        /* 8. INFORMATION SECTION */
+        .information {
+            background-color: #edf3fc;
+            padding: 18px;
+            border-left: 4px solid #2457a6;
+            border-radius: 5px;
+            line-height: 1.6;
+        }
+
+        /* 9. FOOTER */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            font-size: 13px;
+            margin-top: 30px;
+        }
+
+        /* 10. RESPONSIVE DESIGN */
+        @media (max-width: 650px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav a {
+                margin-left: 0;
+                margin-right: 12px;
+            }
+
+            .container {
+                width: 92%;
+            }
+
+            .summary-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-row {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                padding: 18px;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h2>Epilepsy Care</h2>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="patient.html">Dashboard</a>
+            <a href="medication.html">Medication</a>
+            <a href="health-records.html">Health Records</a>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+
+        <!-- PAGE INTRODUCTION -->
+        <section class="page-heading">
+            <h1>Health History</h1>
+
+            <p>
+                View your previous health activities and review
+                information recorded in your Epilepsy Care system.
+            </p>
+        </section>
+
+        <!-- HEALTH SUMMARY -->
+        <section class="summary-grid">
+
+            <div class="summary-card">
+                <h3>Medication Records</h3>
+                <p>Review your medication history.</p>
+            </div>
+
+            <div class="summary-card">
+                <h3>Seizure Records</h3>
+                <p>Review previously recorded seizures.</p>
+            </div>
+
+            <div class="summary-card">
+                <h3>Side Effects</h3>
+                <p>Review previously reported side effects.</p>
+            </div>
+
+        </section>
+
+        <!-- FILTER SECTION -->
+        <section class="card">
+
+            <h2>Filter Health History</h2>
+
+            <div class="filter-row">
+
+                <div class="filter-group">
+                    <label for="record-type">Record Type</label>
+
+                    <select id="record-type">
+                        <option value="">All Records</option>
+                        <option>Medication</option>
+                        <option>Seizure</option>
+                        <option>Side Effects</option>
+                        <option>Symptoms</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="record-date">Date</label>
+
+                    <input type="date" id="record-date">
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- HEALTH HISTORY TABLE -->
+        <section class="card">
+
+            <h2>Previous Health Activities</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Record Type</th>
+                        <th>Description</th>
+                        <th>Additional Details</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td colspan="4" class="empty-message">
+                            No previous health activities are available yet.
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <!-- INFORMATION -->
+        <section class="card">
+
+            <h2>Health History Information</h2>
+
+            <div class="information">
+                Keeping a record of your health activities can help
+                you understand changes in your condition and provide
+                useful information during medical consultations.
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Epilepsy Care System. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

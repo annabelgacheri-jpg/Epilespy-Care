@@ -1,0 +1,356 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultation Summary | Epilepsy Care</title>
+
+    <style>
+        /* 1. GENERAL PAGE STYLING */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+        }
+
+        /* 2. HEADER */
+        header {
+            background-color: #2457a6;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        header h2 {
+            font-size: 23px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* 3. MAIN CONTAINER */
+        .container {
+            width: 86%;
+            max-width: 1100px;
+            margin: 35px auto;
+        }
+
+        .page-heading {
+            margin-bottom: 25px;
+        }
+
+        .page-heading h1 {
+            color: #2457a6;
+            margin-bottom: 10px;
+        }
+
+        .page-heading p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* 4. CONTENT CARDS */
+        .card {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .card h2 {
+            color: #2457a6;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        /* 5. FORM STYLING */
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+            background-color: white;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* 6. BUTTON */
+        .btn {
+            background-color: #2457a6;
+            color: white;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #193f7c;
+        }
+
+        /* 7. CONSULTATION TABLE */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 14px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        th {
+            background-color: #edf3fc;
+            color: #2457a6;
+        }
+
+        .empty-message {
+            text-align: center;
+            color: #777;
+            padding: 25px;
+        }
+
+        /* 8. INFORMATION SECTION */
+        .information {
+            background-color: #edf3fc;
+            padding: 18px;
+            border-left: 4px solid #2457a6;
+            border-radius: 5px;
+            line-height: 1.6;
+        }
+
+        /* 9. FOOTER */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            font-size: 13px;
+            margin-top: 30px;
+        }
+
+        /* 10. RESPONSIVE DESIGN */
+        @media (max-width: 650px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav a {
+                margin-left: 0;
+                margin-right: 12px;
+            }
+
+            .container {
+                width: 92%;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                padding: 18px;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h2>Epilepsy Care</h2>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="patient.html">Dashboard</a>
+            <a href="medication.html">Medication</a>
+            <a href="health-records.html">Health Records</a>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+
+        <!-- PAGE INTRODUCTION -->
+        <section class="page-heading">
+            <h1>Consultation Summary</h1>
+
+            <p>
+                Request a summary of your health information
+                to support communication with your healthcare professional.
+            </p>
+        </section>
+
+        <!-- REQUEST CONSULTATION SUMMARY -->
+        <section class="card">
+
+            <h2>Request Consultation Summary</h2>
+
+            <form>
+
+                <div class="form-group">
+                    <label for="doctor-name">Doctor's Name (Optional)</label>
+
+                    <input
+                        type="text"
+                        id="doctor-name"
+                        placeholder="Enter doctor's name"
+                    >
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="start-date">Start Date</label>
+
+                        <input
+                            type="date"
+                            id="start-date"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="end-date">End Date</label>
+
+                        <input
+                            type="date"
+                            id="end-date"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="summary-type">Summary Type</label>
+
+                    <select id="summary-type" required>
+                        <option value="">Select summary type</option>
+                        <option>Medication History</option>
+                        <option>Seizure History</option>
+                        <option>Health Records</option>
+                        <option>Complete Health Summary</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="reason">Purpose of Consultation</label>
+
+                    <textarea
+                        id="reason"
+                        placeholder="Briefly explain the purpose of your consultation"
+                    ></textarea>
+                </div>
+
+                <button type="button" class="btn">
+                    Request Summary
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- PREVIOUS CONSULTATION SUMMARIES -->
+        <section class="card">
+
+            <h2>My Consultation Summaries</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Summary Date</th>
+                        <th>Summary Type</th>
+                        <th>Doctor</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td colspan="4" class="empty-message">
+                            No consultation summaries are available yet.
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <!-- INFORMATION -->
+        <section class="card">
+
+            <h2>Consultation Information</h2>
+
+            <div class="information">
+                Consultation summaries help patients share relevant
+                health information with healthcare professionals.
+                They may include medication records, seizure history
+                and other recorded health observations.
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Epilepsy Care System. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,418 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emergency Help | Epilepsy Care</title>
+
+    <style>
+        /* 1. GENERAL PAGE STYLING */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+        }
+
+        /* 2. HEADER */
+        header {
+            background-color: #2457a6;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        header h2 {
+            font-size: 23px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* 3. MAIN CONTAINER */
+        .container {
+            width: 86%;
+            max-width: 1100px;
+            margin: 35px auto;
+        }
+
+        .page-heading {
+            margin-bottom: 25px;
+        }
+
+        .page-heading h1 {
+            color: #2457a6;
+            margin-bottom: 10px;
+        }
+
+        .page-heading p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* 4. CONTENT CARDS */
+        .card {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+        }
+
+        .card h2 {
+            color: #2457a6;
+            margin-bottom: 20px;
+            font-size: 20px;
+        }
+
+        /* 5. FORM STYLING */
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 90px;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        /* 6. BUTTONS */
+        .btn {
+            background-color: #2457a6;
+            color: white;
+            border: none;
+            padding: 12px 22px;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: #193f7c;
+        }
+
+        .emergency-btn {
+            background-color: #c62828;
+        }
+
+        .emergency-btn:hover {
+            background-color: #991b1b;
+        }
+
+        /* 7. EMERGENCY INFORMATION */
+        .emergency-box {
+            background-color: #fff0f0;
+            border-left: 5px solid #c62828;
+            padding: 20px;
+            border-radius: 6px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .emergency-box h3 {
+            color: #c62828;
+            margin-bottom: 10px;
+        }
+
+        /* 8. CONTACT TABLE */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            padding: 14px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            font-size: 14px;
+        }
+
+        th {
+            background-color: #edf3fc;
+            color: #2457a6;
+        }
+
+        .empty-message {
+            text-align: center;
+            color: #777;
+            padding: 25px;
+        }
+
+        /* 9. INFORMATION SECTION */
+        .information {
+            background-color: #edf3fc;
+            padding: 18px;
+            border-left: 4px solid #2457a6;
+            border-radius: 5px;
+            line-height: 1.6;
+        }
+
+        /* 10. FOOTER */
+        footer {
+            text-align: center;
+            padding: 20px;
+            color: #777;
+            font-size: 13px;
+            margin-top: 30px;
+        }
+
+        /* 11. RESPONSIVE DESIGN */
+        @media (max-width: 650px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav a {
+                margin-left: 0;
+                margin-right: 12px;
+            }
+
+            .container {
+                width: 92%;
+            }
+
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+
+            .card {
+                padding: 18px;
+            }
+
+            table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h2>Epilepsy Care</h2>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="patient.html">Dashboard</a>
+            <a href="medication.html">Medication</a>
+            <a href="health-records.html">Health Records</a>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+
+        <!-- PAGE INTRODUCTION -->
+        <section class="page-heading">
+            <h1>Emergency Help Request</h1>
+
+            <p>
+                Manage your emergency contact details and access
+                important information when you need assistance.
+            </p>
+        </section>
+
+        <!-- EMERGENCY NOTICE -->
+        <section class="card">
+
+            <div class="emergency-box">
+
+                <h3>Emergency Assistance</h3>
+
+                <p>
+                    If you are experiencing a medical emergency,
+                    seek immediate assistance from nearby people
+                    and contact local emergency services.
+                </p>
+
+                <br>
+
+                <p>
+                    Do not rely on this website as a substitute
+                    for emergency medical services.
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- EMERGENCY CONTACT FORM -->
+        <section class="card">
+
+            <h2>Emergency Contact Details</h2>
+
+            <form>
+
+                <div class="form-group">
+                    <label for="contact-name">Contact Person's Name</label>
+
+                    <input
+                        type="text"
+                        id="contact-name"
+                        placeholder="Enter contact person's name"
+                        required
+                    >
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+                        <label for="relationship">Relationship</label>
+
+                        <select id="relationship" required>
+                            <option value="">Select relationship</option>
+                            <option>Parent</option>
+                            <option>Sibling</option>
+                            <option>Spouse</option>
+                            <option>Friend</option>
+                            <option>Caregiver</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="Enter phone number"
+                            required
+                        >
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address (Optional)</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        placeholder="Enter email address"
+                    >
+                </div>
+
+                <button type="button" class="btn">
+                    Save Emergency Contact
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- EMERGENCY CONTACT LIST -->
+        <section class="card">
+
+            <h2>My Emergency Contacts</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Contact Name</th>
+                        <th>Relationship</th>
+                        <th>Phone Number</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td colspan="4" class="empty-message">
+                            No emergency contacts have been added yet.
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+        </section>
+
+        <!-- HELP REQUEST -->
+        <section class="card">
+
+            <h2>Request Assistance</h2>
+
+            <div class="form-group">
+                <label for="help-message">Describe the Assistance Needed</label>
+
+                <textarea
+                    id="help-message"
+                    placeholder="Describe the assistance you need"
+                ></textarea>
+            </div>
+
+            <button type="button" class="btn emergency-btn">
+                Request Help
+            </button>
+
+        </section>
+
+        <!-- ADDITIONAL INFORMATION -->
+        <section class="card">
+
+            <h2>Important Information</h2>
+
+            <div class="information">
+                Keep your emergency contact information updated.
+                Make sure your caregiver or trusted contact knows
+                how to assist you when necessary.
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Epilepsy Care System. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
