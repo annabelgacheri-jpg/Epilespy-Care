@@ -1,517 +1,2069 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>EpilepsyCare | Health Support System</title>
+    <title>Epilepsy Care System</title>
 
-    <!-- Connect the CSS file -->
-    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* =====================================
+           1. GENERAL PAGE STYLING
+        ===================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 90px;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f7fb;
+            color: #263445;
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* =====================================
+           2. HEADER AND NAVIGATION
+        ===================================== */
+
+        header {
+            background-color: #ffffff;
+            padding: 18px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e2e8f0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+            color: #245c83;
+        }
+
+        .logo span {
+            color: #36a6a0;
+        }
+
+        nav {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #45566b;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #219b98;
+        }
+
+        /* =====================================
+           3. MAIN CONTAINER
+        ===================================== */
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+
+        .section-heading {
+            margin-bottom: 20px;
+        }
+
+        .section-heading h2 {
+            color: #245c83;
+            font-size: 25px;
+            margin-bottom: 5px;
+        }
+
+        .section-heading p {
+            color: #718096;
+            font-size: 14px;
+        }
+
+        /* =====================================
+           4. WELCOME SECTION
+        ===================================== */
+
+        .welcome {
+            background: linear-gradient(120deg, #245c83, #36a6a0);
+            color: white;
+            padding: 40px;
+            border-radius: 12px;
+            margin-bottom: 35px;
+        }
+
+        .welcome h1 {
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .welcome p {
+            max-width: 650px;
+            font-size: 15px;
+        }
+
+        /* =====================================
+           5. DASHBOARD CARDS
+        ===================================== */
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .card {
+            background-color: #ffffff;
+            padding: 22px;
+            border-radius: 10px;
+            border: 1px solid #e5eaf0;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.04);
+        }
+
+        .card h3 {
+            color: #245c83;
+            font-size: 17px;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            color: #718096;
+            font-size: 14px;
+        }
+
+        .card-number {
+            font-size: 27px;
+            font-weight: bold;
+            color: #219b98;
+            margin-bottom: 5px;
+        }
+
+        /* =====================================
+           6. GENERAL CONTENT SECTIONS
+        ===================================== */
+
+        .system-section {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 35px;
+            border: 1px solid #e5eaf0;
+        }
+
+        .subsection {
+            margin-top: 25px;
+        }
+
+        .subsection h3 {
+            color: #245c83;
+            margin-bottom: 15px;
+            font-size: 18px;
+        }
+
+        /* =====================================
+           7. FORMS
+        ===================================== */
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group.full-width {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 7px;
+            color: #45566b;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            font-size: 14px;
+            font-family: inherit;
+            background-color: #ffffff;
+        }
+
+        textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #219b98;
+        }
+
+        /* =====================================
+           8. BUTTONS
+        ===================================== */
+
+        .btn {
+            display: inline-block;
+            padding: 11px 20px;
+            background-color: #245c83;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background-color: #194563;
+        }
+
+        .btn-green {
+            background-color: #219b98;
+        }
+
+        .btn-green:hover {
+            background-color: #167b78;
+        }
+
+        .btn-red {
+            background-color: #d9534f;
+        }
+
+        .btn-light {
+            background-color: #e8f1f7;
+            color: #245c83;
+        }
+
+        .form-actions {
+            margin-top: 20px;
+        }
+
+        /* =====================================
+           9. TABLES
+        ===================================== */
+
+        .table-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            min-width: 550px;
+        }
+
+        th,
+        td {
+            padding: 13px;
+            text-align: left;
+            border-bottom: 1px solid #e5eaf0;
+            font-size: 14px;
+        }
+
+        th {
+            background-color: #edf4f8;
+            color: #245c83;
+        }
+
+        tr:hover {
+            background-color: #f8fafc;
+        }
+
+        /* =====================================
+           10. STATUS LABELS
+        ===================================== */
+
+        .status {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .status-pending {
+            background-color: #fff2cc;
+            color: #8a6500;
+        }
+
+        .status-approved {
+            background-color: #d9f2e5;
+            color: #187747;
+        }
+
+        .status-missed {
+            background-color: #fce1e1;
+            color: #a83232;
+        }
+
+        .status-completed {
+            background-color: #dceefa;
+            color: #245c83;
+        }
+
+        /* =====================================
+           11. ROLE NAVIGATION
+        ===================================== */
+
+        .role-navigation {
+            background-color: #ffffff;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .role-navigation a {
+            background-color: #edf4f8;
+            color: #245c83;
+            padding: 9px 15px;
+            border-radius: 6px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .role-navigation a:hover {
+            background-color: #d8eaf2;
+        }
+
+        /* =====================================
+           12. FOOTER
+        ===================================== */
+
+        footer {
+            background-color: #245c83;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 40px;
+            font-size: 13px;
+        }
+
+        /* =====================================
+           13. RESPONSIVE DESIGN
+        ===================================== */
+
+        @media (max-width: 768px) {
+
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav {
+                gap: 12px;
+            }
+
+            .card-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .welcome h1 {
+                font-size: 24px;
+            }
+
+            .system-section {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+
+            .card-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .container {
+                width: 94%;
+            }
+
+            .welcome {
+                padding: 25px;
+            }
+
+            nav a {
+                font-size: 12px;
+            }
+        }
+
+    </style>
 </head>
 
 <body>
 
-    <div class="container">
+    <!-- =====================================
+         HEADER AND MAIN NAVIGATION
+    ====================================== -->
 
-        <!-- SIDEBAR NAVIGATION -->
-        <aside class="sidebar">
+    <header>
 
-            <h2>EpilepsyCare</h2>
-             <p>Track • Manage • Live Better</p>
+        <div class="logo">
+            Epilepsy<span>Care</span>
+        </div>
 
-            <nav>
-                <ul>
-                    <li><a href="#home" class="active">Home</a></li>
-                    <li><a href="#quick-assist">Quick Assist</a></li>
-                    <li><a href="#medication">Medication Reminders</a></li>
-                    <li><a href="#side-effects">Side Effects Tracking</a></li>
-                    <li><a href="#consultation">Consultation Summary</a></li>
-                    <li><a href="#seizure-log">Seizure &amp; Symptom Log</a></li>
-                    <li><a href="#settings">Settings</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#patient">Patient</a>
+            <a href="#doctor">Doctor</a>
+            <a href="#caregiver">Caregiver</a>
+            <a href="#administrator">Administrator</a>
+        </nav>
 
-            <p class="sidebar-note">
-                You are not alone.<br>
-                Support is always within reach.
+    </header>
+
+
+    <main class="container">
+
+        <!-- =====================================
+             HOME / WELCOME SECTION
+        ====================================== -->
+
+        <section class="welcome" id="home">
+
+            <h1>Welcome to Epilepsy Care</h1>
+
+            <p>
+                A digital epilepsy support system designed to help
+                people living with epilepsy manage their medication,
+                record seizures and symptoms, track side effects
+                and communicate with designated caregivers.
             </p>
 
-        </aside>
+        </section>
 
 
-        <!-- MAIN CONTENT -->
-        <main class="main-content">
+        <!-- =====================================
+             QUICK ROLE NAVIGATION
+        ====================================== -->
 
-            <!-- HEADER -->
-            <header class="page-header">
-                <h2>My Health Dashboard</h2>
-                <p>Welcome to your personal health support space.</p>
-            </header>
+        <div class="role-navigation">
 
+            <a href="#patient">Patient Dashboard</a>
 
-            <!-- HOME / WELCOME SECTION -->
-            <section class="welcome" id="home">
+            <a href="#doctor">Doctor Dashboard</a>
 
-                <h1>Welcome to EpilepsyCare</h1>
+            <a href="#caregiver">Caregiver Dashboard</a>
 
-                <p>
-                    Your personal medication and health support system.
-                </p>
+            <a href="#administrator">Admin Dashboard</a>
 
-                <p>
-                    Stay organised, record your health information,
-                    and prepare for your consultations.
-                </p>
-
-            </section>
+        </div>
 
 
-            <!-- SIX FEATURE CARDS -->
-            <section class="cards">
+        <!-- =====================================
+             PATIENT SECTION
+        ====================================== -->
 
-                <!-- QUICK ASSIST -->
-                <article class="card quick-assist" id="quick-assist">
+        <section class="system-section" id="patient">
 
-                    <h2>Quick Assist</h2>
+            <div class="section-heading">
 
-                    <p>
-                        Prepare a request for help from your designated
-                        caregiver when you need assistance.
-                    </p>
-
-                    <a href="#quick-assist-form" class="button">
-                        Request Help
-                    </a>
-
-                </article>
-
-
-                <!-- MEDICATION REMINDERS -->
-                <article class="card medication" id="medication">
-
-                    <h2>Medication Reminders</h2>
-
-                    <p>
-                        Organise your medication schedule and record
-                        the doses you have taken.
-                    </p>
-
-                    <a href="#medication-form" class="button">
-                        Manage Medication
-                    </a>
-
-                </article>
-
-
-                <!-- SIDE EFFECTS TRACKING -->
-                <article class="card side-effects" id="side-effects">
-
-                    <h2>Side Effects Tracking</h2>
-
-                    <p>
-                        Record any side effects you experience while
-                        taking your prescribed medication.
-                    </p>
-
-                    <a href="#side-effects-form" class="button">
-                        Record Side Effects
-                    </a>
-
-                </article>
-
-
-                <!-- CONSULTATION SUMMARY -->
-                <article class="card consultation" id="consultation">
-
-                    <h2>Consultation Summary</h2>
-
-                    <p>
-                        Review your medication history, symptoms,
-                        seizures, and side-effect records.
-                    </p>
-
-                    <a href="#summary-section" class="button">
-                        View Summary
-                    </a>
-
-                </article>
-
-
-                <!-- SEIZURE AND SYMPTOM LOG -->
-                <article class="card seizure-log" id="seizure-log">
-
-                    <h2>Seizure &amp; Symptom Log</h2>
-
-                    <p>
-                        Record seizure events, symptoms, dates,
-                        duration, and other relevant notes.
-                    </p>
-
-                    <a href="#seizure-form" class="button">
-                        Add Health Record
-                    </a>
-
-                </article>
-
-
-                <!-- SETTINGS AND CONTACT -->
-                <article class="card settings" id="settings">
-
-                    <h2>Settings &amp; Contact</h2>
-
-                    <p>
-                        Manage your profile, preferences, privacy,
-                        and designated caregiver details.
-                    </p>
-
-                    <a href="#settings-form" class="button">
-                        Manage Settings
-                    </a>
-
-                </article>
-
-            </section>
-
-
-            <!-- QUICK ASSIST FORM -->
-            <section class="content-section" id="quick-assist-form">
-
-                <h2>Quick Assist Request</h2>
+                <h2>Patient Dashboard</h2>
 
                 <p>
-                    Prepare a help request for your designated caregiver.
+                    Manage medication, monitor health records
+                    and request assistance from your caregiver.
                 </p>
 
-                <form action="#" method="post">
-
-                    <label for="help-message">
-                        Message to caregiver
-                    </label>
-
-                    <textarea
-                        id="help-message"
-                        name="help_message"
-                        placeholder="Describe the assistance you need..."
-                        required></textarea>
-
-                    <button type="submit" class="button">
-                        Prepare Help Request
-                    </button>
-
-                </form>
-
-                <p class="notice">
-                    This form does not send an alert. Contact your
-                    caregiver directly if you need immediate assistance.
-                </p>
-
-            </section>
+            </div>
 
 
-            <!-- MEDICATION FORM -->
-            <section class="content-section" id="medication-form">
+            <!-- Patient overview cards -->
 
-                <h2>Medication Reminders</h2>
+            <div class="card-grid">
 
-                <p>Enter your prescribed medication schedule.</p>
+                <div class="card">
 
-                <form action="#" method="post">
+                    <h3>Today's Medication</h3>
 
-                    <label for="medicine-name">Medication Name</label>
-                    <input
-                        type="text"
-                        id="medicine-name"
-                        name="medicine_name"
-                        placeholder="Enter medication name"
-                        required>
+                    <div class="card-number">02</div>
 
-                    <label for="dosage">Dosage</label>
-                    <input
-                        type="text"
-                        id="dosage"
-                        name="dosage"
-                        placeholder="As prescribed">
+                    <p>Scheduled medication doses.</p>
 
-                    <label for="dose-time">Scheduled Time</label>
-                    <input
-                        type="time"
-                        id="dose-time"
-                        name="dose_time"
-                        required>
-
-                    <label for="dose-frequency">Frequency</label>
-                    <select id="dose-frequency" name="dose_frequency">
-                        <option value="">Select frequency</option>
-                        <option value="once">Once daily</option>
-                        <option value="twice">Twice daily</option>
-                        <option value="three-times">Three times daily</option>
-                        <option value="other">Other prescribed schedule</option>
-                    </select>
-
-                    <label for="dose-status">Dose Status</label>
-                    <select id="dose-status" name="dose_status">
-                        <option value="">Select status</option>
-                        <option value="taken">Taken</option>
-                        <option value="missed">Missed</option>
-                        <option value="pending">Not yet taken</option>
-                    </select>
-
-                    <button type="submit" class="button">
-                        Save Medication Details
-                    </button>
-
-                </form>
-
-                <p class="notice">
-                    This form does not save data or trigger timed reminders yet.
-                    Follow your healthcare professional's prescribed schedule.
-                </p>
-
-            </section>
-
-
-            <!-- SIDE EFFECTS FORM -->
-            <section class="content-section" id="side-effects-form">
-
-                <h2>Side Effects Tracking</h2>
-
-                <p>Record side effects you have experienced.</p>
-
-                <form action="#" method="post">
-
-                    <label for="effect-name">Side Effect</label>
-                    <input
-                        type="text"
-                        id="effect-name"
-                        name="effect_name"
-                        placeholder="Describe the side effect"
-                        required>
-
-                    <label for="effect-date">Date Experienced</label>
-                    <input
-                        type="date"
-                        id="effect-date"
-                        name="effect_date"
-                        required>
-
-                    <label for="effect-severity">Severity</label>
-                    <select id="effect-severity" name="effect_severity">
-                        <option value="">Select severity</option>
-                        <option value="mild">Mild</option>
-                        <option value="moderate">Moderate</option>
-                        <option value="severe">Severe</option>
-                    </select>
-
-                    <label for="effect-notes">Additional Notes</label>
-                    <textarea
-                        id="effect-notes"
-                        name="effect_notes"
-                        placeholder="Enter any other details"></textarea>
-
-                    <button type="submit" class="button">
-                        Save Side Effect
-                    </button>
-
-                </form>
-
-            </section>
-
-
-            <!-- SEIZURE AND SYMPTOM LOG FORM -->
-            <section class="content-section" id="seizure-form">
-
-                <h2>Seizure &amp; Symptom Log</h2>
-
-                <p>Record a seizure event or other symptoms.</p>
-
-                <form action="#" method="post">
-
-                    <label for="record-type">Record Type</label>
-                    <select id="record-type" name="record_type" required>
-                        <option value="">Select record type</option>
-                        <option value="seizure">Seizure</option>
-                        <option value="symptom">Symptom</option>
-                    </select>
-
-                    <label for="event-date">Date</label>
-                    <input
-                        type="date"
-                        id="event-date"
-                        name="event_date"
-                        required>
-
-                    <label for="event-time">Time</label>
-                    <input
-                        type="time"
-                        id="event-time"
-                        name="event_time">
-
-                    <label for="event-duration">
-                        Duration (if applicable)
-                    </label>
-                    <input
-                        type="text"
-                        id="event-duration"
-                        name="event_duration"
-                        placeholder="e.g. 2 minutes">
-
-                    <label for="event-symptoms">Symptoms or Description</label>
-                    <textarea
-                        id="event-symptoms"
-                        name="event_symptoms"
-                        placeholder="Describe what happened..."
-                        required></textarea>
-
-                    <label for="event-notes">Additional Notes</label>
-                    <textarea
-                        id="event-notes"
-                        name="event_notes"
-                        placeholder="Enter any additional information"></textarea>
-
-                    <button type="submit" class="button">
-                        Save Health Record
-                    </button>
-
-                </form>
-
-            </section>
-
-
-            <!-- CONSULTATION SUMMARY -->
-            <section class="content-section" id="summary-section">
-
-                <h2>Consultation Summary</h2>
-
-                <p>
-                    Review the following information before your next
-                    healthcare appointment.
-                </p>
-
-                <div class="summary-card">
-                    <h3>Medication History</h3>
-                    <p>
-                        Your medication names, schedules, and dose records
-                        will appear here once data storage is implemented.
-                    </p>
                 </div>
 
-                <div class="summary-card">
-                    <h3>Seizure &amp; Symptom History</h3>
-                    <p>
-                        Your recorded seizures and symptoms will appear here
-                        once the application is connected to a database.
-                    </p>
+
+                <div class="card">
+
+                    <h3>Seizure Records</h3>
+
+                    <div class="card-number">05</div>
+
+                    <p>Illustrative recorded entries.</p>
+
                 </div>
 
-                <div class="summary-card">
-                    <h3>Side Effects History</h3>
-                    <p>
-                        Your recorded side effects will appear here once
-                        records can be saved and retrieved.
-                    </p>
+
+                <div class="card">
+
+                    <h3>Health Records</h3>
+
+                    <div class="card-number">08</div>
+
+                    <p>Illustrative saved health entries.</p>
+
                 </div>
 
-                <p class="notice">
-                    Review the summary and choose what information to share
-                    with your clinician.
-                </p>
-
-            </section>
+            </div>
 
 
-            <!-- SETTINGS FORM -->
-            <section class="content-section" id="settings-form">
+            <!-- Patient medication form -->
 
-                <h2>Settings &amp; Profile</h2>
+            <div class="subsection">
 
-                <form action="#" method="post">
+                <h3>Add Medication</h3>
 
-                    <label for="patient-name">Name</label>
-                    <input
-                        type="text"
-                        id="patient-name"
-                        name="patient_name"
-                        placeholder="Enter your name">
+                <form>
 
-                    <label for="patient-email">Email Address</label>
-                    <input
-                        type="email"
-                        id="patient-email"
-                        name="patient_email"
-                        placeholder="Enter your email">
+                    <div class="form-grid">
 
-                    <label for="caregiver-name">Caregiver Name</label>
-                    <input
-                        type="text"
-                        id="caregiver-name"
-                        name="caregiver_name"
-                        placeholder="Enter caregiver name">
+                        <div class="form-group">
 
-                    <label for="caregiver-phone">Caregiver Phone</label>
-                    <input
-                        type="tel"
-                        id="caregiver-phone"
-                        name="caregiver_phone"
-                        placeholder="Enter caregiver phone number">
+                            <label for="medication-name">
+                                Medication Name
+                            </label>
 
-                    <label for="sharing-consent">
-                        Health information sharing
-                    </label>
-                    <select id="sharing-consent" name="sharing_consent">
-                        <option value="private">
-                            Keep my health records private
-                        </option>
-                        <option value="share-by-choice">
-                            I may choose to share selected records
-                        </option>
-                    </select>
+                            <input
+                                type="text"
+                                id="medication-name"
+                                placeholder="Enter medication name"
+                            >
 
-                    <button type="submit" class="button">
-                        Save Preferences
-                    </button>
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="dosage">
+                                Dosage
+                            </label>
+
+                            <input
+                                type="text"
+                                id="dosage"
+                                placeholder="Enter prescribed dosage"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="frequency">
+                                Frequency
+                            </label>
+
+                            <select id="frequency">
+
+                                <option value="">Select frequency</option>
+
+                                <option>Once daily</option>
+
+                                <option>Twice daily</option>
+
+                                <option>Three times daily</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="reminder-time">
+                                Reminder Time
+                            </label>
+
+                            <input
+                                type="time"
+                                id="reminder-time"
+                            >
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-actions">
+
+                        <button type="button" class="btn">
+                            Save Medication
+                        </button>
+
+                    </div>
 
                 </form>
 
-            </section>
+            </div>
 
 
-            <!-- CONTACT SECTION -->
-            <section class="content-section" id="contact">
+            <!-- Today's medication schedule -->
 
-                <h2>Contact &amp; Support</h2>
+            <div class="subsection">
+
+                <h3>Today's Medication Schedule</h3>
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Medication</th>
+                                <th>Dosage</th>
+                                <th>Time</th>
+                                <th>Status</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>Medication A</td>
+
+                                <td>As prescribed</td>
+
+                                <td>8:00 AM</td>
+
+                                <td>
+                                    <span class="status status-completed">
+                                        Taken
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Medication B</td>
+
+                                <td>As prescribed</td>
+
+                                <td>8:00 PM</td>
+
+                                <td>
+                                    <span class="status status-pending">
+                                        Pending
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- Seizure and symptom logging -->
+
+            <div class="subsection">
+
+                <h3>Log Seizure or Symptom</h3>
+
+                <form>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="entry-type">
+                                Record Type
+                            </label>
+
+                            <select id="entry-type">
+
+                                <option value="">Select record type</option>
+
+                                <option>Seizure</option>
+
+                                <option>Symptom</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="entry-date">
+                                Date
+                            </label>
+
+                            <input type="date" id="entry-date">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="entry-time">
+                                Time
+                            </label>
+
+                            <input type="time" id="entry-time">
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="duration">
+                                Duration
+                            </label>
+
+                            <input
+                                type="text"
+                                id="duration"
+                                placeholder="Enter duration if applicable"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group full-width">
+
+                            <label for="entry-description">
+                                Description
+                            </label>
+
+                            <textarea
+                                id="entry-description"
+                                placeholder="Describe what happened..."
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-actions">
+
+                        <button type="button" class="btn">
+                            Save Health Record
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <!-- Side effect tracking -->
+
+            <div class="subsection">
+
+                <h3>Track Medication Side Effects</h3>
+
+                <form>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="side-effect">
+                                Side Effect
+                            </label>
+
+                            <input
+                                type="text"
+                                id="side-effect"
+                                placeholder="Enter side effect"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="side-effect-date">
+                                Date
+                            </label>
+
+                            <input type="date" id="side-effect-date">
+
+                        </div>
+
+
+                        <div class="form-group full-width">
+
+                            <label for="side-effect-description">
+                                Description
+                            </label>
+
+                            <textarea
+                                id="side-effect-description"
+                                placeholder="Describe the side effect..."
+                            ></textarea>
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-actions">
+
+                        <button type="button" class="btn">
+                            Save Side Effect
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <!-- Quick Assist -->
+
+            <div class="subsection">
+
+                <h3>Quick Assist</h3>
 
                 <p>
-                    Keep your designated caregiver's contact details
-                    up to date so you can reach them when needed.
+                    Use this option to prepare a predefined help
+                    message for your designated caregiver.
                 </p>
+
+                <br>
+
+                <form>
+
+                    <div class="form-group">
+
+                        <label for="caregiver-phone">
+                            Caregiver Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="caregiver-phone"
+                            placeholder="Enter caregiver phone number"
+                        >
+
+                    </div>
+
+                    <div class="form-actions">
+
+                        <button type="button" class="btn btn-red">
+                            Request Assistance
+                        </button>
+
+                    </div>
+
+                </form>
 
                 <p>
-                    For urgent medical assistance, contact your local
-                    emergency service or healthcare provider.
+                    This is a user-initiated request. It does not
+                    automatically detect seizures or share location.
                 </p>
+
+            </div>
+
+
+            <!-- Consultation summary -->
+
+            <div class="subsection">
+
+                <h3>Consultation Summary</h3>
 
                 <p>
-                    EpilepsyCare is a health-record and medication-support
-                    tool. It does not diagnose epilepsy or replace
-                    professional medical advice.
+                    Prepare an organized summary of medication,
+                    dose records, seizures, symptoms and side effects
+                    for a medical consultation.
                 </p>
 
-            </section>
+                <div class="form-actions">
+
+                    <button type="button" class="btn btn-green">
+                        Generate Consultation Summary
+                    </button>
+
+                </div>
+
+            </div>
 
 
-            <!-- FOOTER -->
-            <footer>
-                <p>EpilepsyCare | Support • Safety • Independence</p>
-                <p>Your health records belong to you.</p>
-            </footer>
+            <!-- Patient history -->
 
-        </main>
+            <div class="subsection">
 
-    </div>
+                <h3>My Health History</h3>
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Record Type</th>
+                                <th>Date</th>
+                                <th>Description</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>Seizure</td>
+                                <td>Sample date</td>
+                                <td>Illustrative health record</td>
+                            </tr>
+
+                            <tr>
+                                <td>Symptom</td>
+                                <td>Sample date</td>
+                                <td>Illustrative health record</td>
+                            </tr>
+
+                            <tr>
+                                <td>Side Effect</td>
+                                <td>Sample date</td>
+                                <td>Illustrative health record</td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- Patient account and data -->
+
+            <div class="subsection">
+
+                <h3>My Data and Sharing</h3>
+
+                <p>
+                    Review personal information, manage caregiver
+                    contacts and control sharing of consultation summaries.
+                </p>
+
+                <br>
+
+                <div class="form-actions">
+
+                    <button type="button" class="btn btn-light">
+                        Manage My Data
+                    </button>
+
+                    <button type="button" class="btn btn-light">
+                        Manage Sharing Consent
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             DOCTOR SECTION
+        ====================================== -->
+
+        <section class="system-section" id="doctor">
+
+            <div class="section-heading">
+
+                <h2>Doctor Dashboard</h2>
+
+                <p>
+                    Access patient summaries that have been
+                    shared with your account.
+                </p>
+
+            </div>
+
+
+            <!-- Doctor overview -->
+
+            <div class="card-grid">
+
+                <div class="card">
+
+                    <h3>Shared Summaries</h3>
+
+                    <div class="card-number">04</div>
+
+                    <p>Illustrative shared summaries.</p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>Consultation Notes</h3>
+
+                    <div class="card-number">03</div>
+
+                    <p>Illustrative saved notes.</p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>Account Status</h3>
+
+                    <div class="card-number">Active</div>
+
+                    <p>Illustrative account status.</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Doctor registration -->
+
+            <div class="subsection">
+
+                <h3>Doctor Registration</h3>
+
+                <form>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="doctor-name">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="doctor-name"
+                                placeholder="Enter full name"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="doctor-email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="doctor-email"
+                                placeholder="Enter email address"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="doctor-registration">
+                                Professional Registration Number
+                            </label>
+
+                            <input
+                                type="text"
+                                id="doctor-registration"
+                                placeholder="Enter registration number"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="doctor-password">
+                                Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="doctor-password"
+                                placeholder="Create password"
+                            >
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-actions">
+
+                        <button type="button" class="btn">
+                            Submit Registration
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <!-- Doctor login -->
+
+            <div class="subsection">
+
+                <h3>Doctor Login</h3>
+
+                <form>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="doctor-login-email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="doctor-login-email"
+                                placeholder="Enter email"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="doctor-login-password">
+                                Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="doctor-login-password"
+                                placeholder="Enter password"
+                            >
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-actions">
+
+                        <button type="button" class="btn">
+                            Login
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <!-- Shared patient summaries -->
+
+            <div class="subsection">
+
+                <h3>Shared Patient Summaries</h3>
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Patient Reference</th>
+                                <th>Date Shared</th>
+                                <th>Consent</th>
+                                <th>Action</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>Patient 001</td>
+
+                                <td>Sample date</td>
+
+                                <td>
+                                    <span class="status status-approved">
+                                        Granted
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <a href="#patient-summary" class="btn btn-light">
+                                        View Summary
+                                    </a>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- Patient summary -->
+
+            <div class="subsection" id="patient-summary">
+
+                <h3>Patient Summary</h3>
+
+                <p>
+                    The doctor can review information made available
+                    through the patient's sharing consent.
+                </p>
+
+                <br>
+
+                <div class="card-grid">
+
+                    <div class="card">
+
+                        <h3>Medication Records</h3>
+
+                        <p>Review recorded medication and dose history.</p>
+
+                    </div>
+
+                    <div class="card">
+
+                        <h3>Seizure and Symptom History</h3>
+
+                        <p>Review recorded seizure and symptom entries.</p>
+
+                    </div>
+
+                    <div class="card">
+
+                        <h3>Side Effect History</h3>
+
+                        <p>Review reported medication side effects.</p>
+
+                    </div>
+
+                </div>
+
+
+                <h3>Consultation Note</h3>
+
+                <form>
+
+                    <div class="form-group">
+
+                        <label for="consultation-note">
+                            Add Consultation Note
+                        </label>
+
+                        <textarea
+                            id="consultation-note"
+                            placeholder="Enter consultation note..."
+                        ></textarea>
+
+                    </div>
+
+                    <div class="form-actions">
+
+                        <button type="button" class="btn">
+                            Save Consultation Note
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             CAREGIVER SECTION
+        ====================================== -->
+
+        <section class="system-section" id="caregiver">
+
+            <div class="section-heading">
+
+                <h2>Caregiver Dashboard</h2>
+
+                <p>
+                    View patient-authorized information and
+                    respond to patient-initiated help requests.
+                </p>
+
+            </div>
+
+
+            <!-- Caregiver overview -->
+
+            <div class="card-grid">
+
+                <div class="card">
+
+                    <h3>Help Requests</h3>
+
+                    <div class="card-number">02</div>
+
+                    <p>Illustrative help requests.</p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>Linked Patients</h3>
+
+                    <div class="card-number">01</div>
+
+                    <p>Illustrative linked patient.</p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>Dose Status</h3>
+
+                    <div class="card-number">View</div>
+
+                    <p>Subject to patient permission.</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Caregiver invitation -->
+
+            <div class="subsection">
+
+                <h3>Accept Patient Invitation</h3>
+
+                <form>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="caregiver-name">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="caregiver-name"
+                                placeholder="Enter your name"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="caregiver-email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="caregiver-email"
+                                placeholder="Enter email address"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="invitation-code">
+                                Invitation Code
+                            </label>
+
+                            <input
+                                type="text"
+                                id="invitation-code"
+                                placeholder="Enter invitation code"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="caregiver-password">
+                                Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="caregiver-password"
+                                placeholder="Create password"
+                            >
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-actions">
+
+                        <button type="button" class="btn">
+                            Accept Invitation
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <!-- Caregiver login -->
+
+            <div class="subsection">
+
+                <h3>Caregiver Login</h3>
+
+                <form>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="caregiver-login-email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="caregiver-login-email"
+                                placeholder="Enter email"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="caregiver-login-password">
+                                Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="caregiver-login-password"
+                                placeholder="Enter password"
+                            >
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-actions">
+
+                        <button type="button" class="btn">
+                            Login
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <!-- Help requests -->
+
+            <div class="subsection">
+
+                <h3>Patient Help Requests</h3>
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Patient Reference</th>
+                                <th>Request Details</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>Patient 001</td>
+
+                                <td>Patient requested assistance</td>
+
+                                <td>
+                                    <span class="status status-pending">
+                                        Pending
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button type="button" class="btn btn-green">
+                                        Acknowledge
+                                    </button>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- Dose status -->
+
+            <div class="subsection">
+
+                <h3>Patient Medication Status</h3>
+
+                <p>
+                    The caregiver can view dose status only
+                    where the patient has granted permission.
+                </p>
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Medication</th>
+                                <th>Scheduled Time</th>
+                                <th>Dose Status</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>Medication A</td>
+
+                                <td>8:00 AM</td>
+
+                                <td>
+                                    <span class="status status-completed">
+                                        Taken
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>Medication B</td>
+
+                                <td>8:00 PM</td>
+
+                                <td>
+                                    <span class="status status-pending">
+                                        Pending
+                                    </span>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =====================================
+             ADMINISTRATOR SECTION
+        ====================================== -->
+
+        <section class="system-section" id="administrator">
+
+            <div class="section-heading">
+
+                <h2>Administrator Dashboard</h2>
+
+                <p>
+                    Manage system accounts, review doctor applications,
+                    maintain reference information and monitor system activity.
+                </p>
+
+            </div>
+
+
+            <!-- Administrator overview -->
+
+            <div class="card-grid">
+
+                <div class="card">
+
+                    <h3>User Accounts</h3>
+
+                    <div class="card-number">25</div>
+
+                    <p>Illustrative account total.</p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>Doctor Applications</h3>
+
+                    <div class="card-number">03</div>
+
+                    <p>Illustrative pending applications.</p>
+
+                </div>
+
+
+                <div class="card">
+
+                    <h3>System Errors</h3>
+
+                    <div class="card-number">02</div>
+
+                    <p>Illustrative error records.</p>
+
+                </div>
+
+            </div>
+
+
+            <!-- Administrator login -->
+
+            <div class="subsection">
+
+                <h3>Administrator Login</h3>
+
+                <form>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="admin-username">
+                                Username
+                            </label>
+
+                            <input
+                                type="text"
+                                id="admin-username"
+                                placeholder="Enter username"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="admin-password">
+                                Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="admin-password"
+                                placeholder="Enter password"
+                            >
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-actions">
+
+                        <button type="button" class="btn">
+                            Login
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <!-- Doctor applications -->
+
+            <div class="subsection">
+
+                <h3>Doctor Applications</h3>
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Doctor Name</th>
+                                <th>Registration Number</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>Sample Doctor</td>
+
+                                <td>REG-001</td>
+
+                                <td>
+                                    <span class="status status-pending">
+                                        Pending
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button type="button" class="btn btn-green">
+                                        Approve
+                                    </button>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- Manage user accounts -->
+
+            <div class="subsection">
+
+                <h3>Manage User Accounts</h3>
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>User Reference</th>
+                                <th>User Role</th>
+                                <th>Account Status</th>
+                                <th>Action</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>USER-001</td>
+
+                                <td>Patient</td>
+
+                                <td>
+                                    <span class="status status-approved">
+                                        Active
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button type="button" class="btn btn-light">
+                                        Manage
+                                    </button>
+                                </td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>USER-002</td>
+
+                                <td>Doctor</td>
+
+                                <td>
+                                    <span class="status status-approved">
+                                        Active
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <button type="button" class="btn btn-light">
+                                        Manage
+                                    </button>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- Medication reference data -->
+
+            <div class="subsection">
+
+                <h3>Medication Reference Data</h3>
+
+                <form>
+
+                    <div class="form-grid">
+
+                        <div class="form-group">
+
+                            <label for="reference-medication">
+                                Medication Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="reference-medication"
+                                placeholder="Enter medication name"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="reference-description">
+                                Description
+                            </label>
+
+                            <input
+                                type="text"
+                                id="reference-description"
+                                placeholder="Enter description"
+                            >
+
+                        </div>
+
+                    </div>
+
+                    <div class="form-actions">
+
+                        <button type="button" class="btn">
+                            Add Reference Data
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <!-- Help message template -->
+
+            <div class="subsection">
+
+                <h3>Help Message Template</h3>
+
+                <form>
+
+                    <div class="form-group">
+
+                        <label for="help-template">
+                            Predefined Help Message
+                        </label>
+
+                        <textarea
+                            id="help-template"
+                            placeholder="Enter the help message template..."
+                        ></textarea>
+
+                    </div>
+
+                    <div class="form-actions">
+
+                        <button type="button" class="btn">
+                            Update Message Template
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </div>
+
+
+            <!-- System errors -->
+
+            <div class="subsection">
+
+                <h3>System Error Log</h3>
+
+                <div class="table-container">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+                                <th>Error Reference</th>
+                                <th>Description</th>
+                                <th>Date</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>ERR-001</td>
+
+                                <td>Illustrative system error</td>
+
+                                <td>Sample date</td>
+
+                            </tr>
+
+                            <tr>
+
+                                <td>ERR-002</td>
+
+                                <td>Illustrative system error</td>
+
+                                <td>Sample date</td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <!-- Usage reports -->
+
+            <div class="subsection">
+
+                <h3>System Usage Reports</h3>
+
+                <p>
+                    Review anonymised statistics about system usage
+                    without accessing private patient health records.
+                </p>
+
+                <br>
+
+                <button type="button" class="btn btn-green">
+                    Generate Usage Report
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =====================================
+         FOOTER
+    ====================================== -->
+
+    <footer>
+
+        <p>
+            Epilepsy Care System
+        </p>
+
+        <p>
+            Supporting medication management and epilepsy self-management.
+        </p>
+
+        <p>
+            This system does not replace professional medical care.
+        </p>
+
+    </footer>
 
 </body>
 </html>
