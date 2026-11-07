@@ -1,0 +1,333 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultation Notes | Epilepsy Care</title>
+
+    <style>
+        /* GENERAL STYLING */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+        }
+
+        /* HEADER */
+        header {
+            background-color: #2457a6;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* MAIN CONTAINER */
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 35px auto;
+        }
+
+        /* INTRODUCTION */
+        .welcome {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .welcome h2 {
+            color: #2457a6;
+            margin-bottom: 12px;
+        }
+
+        .welcome p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* FORM CARD */
+        .form-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .form-card h3 {
+            color: #2457a6;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #2457a6;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        /* BUTTON */
+        .btn {
+            background-color: #2457a6;
+            color: white;
+            padding: 13px 22px;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #183f7d;
+        }
+
+        /* INFORMATION SECTION */
+        .information {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .information h3 {
+            color: #2457a6;
+            margin-bottom: 12px;
+        }
+
+        .information p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #2457a6;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 650px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 8px;
+            }
+
+            .container {
+                width: 92%;
+            }
+
+            .form-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Epilepsy Care System</h1>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="doctor.html">Dashboard</a>
+            <a href="shared-summaries.html">Patient Summaries</a>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+
+        <!-- INTRODUCTION -->
+        <section class="welcome">
+
+            <h2>Consultation Notes</h2>
+
+            <p>
+                Record observations and recommendations following
+                a patient's consultation. These notes can help
+                document the doctor's review of the patient's
+                epilepsy management information.
+            </p>
+
+        </section>
+
+        <!-- CONSULTATION FORM -->
+        <section class="form-card">
+
+            <h3>Record Consultation Details</h3>
+
+            <form>
+
+                <div class="form-group">
+                    <label for="patient-id">Patient ID</label>
+
+                    <input
+                        type="text"
+                        id="patient-id"
+                        placeholder="Enter patient ID"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="patient-name">Patient Name</label>
+
+                    <input
+                        type="text"
+                        id="patient-name"
+                        placeholder="Enter patient name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="consultation-date">
+                        Consultation Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="consultation-date"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="consultation-type">
+                        Consultation Type
+                    </label>
+
+                    <select id="consultation-type" required>
+                        <option value="">Select consultation type</option>
+                        <option>Initial Consultation</option>
+                        <option>Follow-up Consultation</option>
+                        <option>Medication Review</option>
+                        <option>General Health Review</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="observations">
+                        Doctor's Observations
+                    </label>
+
+                    <textarea
+                        id="observations"
+                        placeholder="Enter observations about the patient's condition"
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="recommendations">
+                        Recommendations
+                    </label>
+
+                    <textarea
+                        id="recommendations"
+                        placeholder="Enter recommendations for the patient"
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="follow-up">
+                        Follow-up Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="follow-up"
+                    >
+                </div>
+
+                <button type="button" class="btn">
+                    Save Consultation Note
+                </button>
+
+            </form>
+
+        </section>
+
+        <!-- INFORMATION -->
+        <section class="information">
+
+            <h3>Important Information</h3>
+
+            <p>
+                Consultation notes should contain accurate,
+                relevant and confidential patient information.
+                Access to these records should be restricted
+                to authorised users.
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Epilepsy Care System. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,292 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Requests | Epilepsy Care System</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+        }
+
+        header {
+            background-color: #2457a6;
+            color: white;
+            padding: 20px 7%;
+        }
+
+        header h1 {
+            margin-bottom: 8px;
+        }
+
+        nav {
+            margin-top: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 86%;
+            max-width: 1100px;
+            margin: 35px auto;
+        }
+
+        .page-heading {
+            margin-bottom: 25px;
+        }
+
+        .page-heading h2 {
+            color: #2457a6;
+            margin-bottom: 10px;
+        }
+
+        .page-heading p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .notice {
+            background-color: #fff3cd;
+            border-left: 5px solid #e0a800;
+            padding: 15px;
+            margin-bottom: 25px;
+            border-radius: 5px;
+            line-height: 1.5;
+        }
+
+        .card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            margin-bottom: 25px;
+        }
+
+        .card h3 {
+            color: #2457a6;
+            margin-bottom: 20px;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 650px;
+        }
+
+        th, td {
+            padding: 14px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #eaf0fa;
+            color: #2457a6;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 5px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .pending {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+
+        .acknowledged {
+            background-color: #d4edda;
+            color: #155724;
+        }
+
+        button {
+            background-color: #2457a6;
+            color: white;
+            border: none;
+            padding: 9px 13px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #173d79;
+        }
+
+        .information {
+            line-height: 1.7;
+            color: #555;
+        }
+
+        footer {
+            background-color: #2457a6;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 650px) {
+            .container {
+                width: 92%;
+            }
+
+            header {
+                padding: 20px 4%;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 8px 12px 0 0;
+            }
+
+            .card {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Epilepsy Care System</h1>
+        <p>Caregiver Help Requests</p>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="caregiver.html">Dashboard</a>
+            <a href="accept-invitation.html">Invitations</a>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section class="page-heading">
+            <h2>Patient Help Requests</h2>
+            <p>
+                View help requests submitted by patients who have
+                connected their accounts to you.
+            </p>
+        </section>
+
+        <div class="notice">
+            <strong>Important:</strong>
+            If a patient appears to be experiencing a medical emergency,
+            contact emergency services or seek immediate medical assistance.
+            Do not rely on this page as an emergency alert system.
+        </div>
+
+        <section class="card">
+            <h3>Recent Help Requests</h3>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Patient Name</th>
+                            <th>Date</th>
+                            <th>Request Details</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>Patient Example 1</td>
+                            <td>06/11/2026</td>
+                            <td>Request for assistance</td>
+                            <td>
+                                <span class="status pending">Pending</span>
+                            </td>
+                            <td>
+                                <button type="button">View Request</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Patient Example 2</td>
+                            <td>05/11/2026</td>
+                            <td>Needs caregiver support</td>
+                            <td>
+                                <span class="status acknowledged">Acknowledged</span>
+                            </td>
+                            <td>
+                                <button type="button">View Request</button>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>Patient Example 3</td>
+                            <td>04/11/2026</td>
+                            <td>General assistance</td>
+                            <td>
+                                <span class="status pending">Pending</span>
+                            </td>
+                            <td>
+                                <button type="button">View Request</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="card">
+            <h3>Help Request Information</h3>
+
+            <div class="information">
+                <p>
+                    This section allows caregivers to monitor help requests
+                    submitted by connected patients.
+                </p>
+
+                <p>
+                    Each request should display the patient's details,
+                    the date it was submitted, the request information,
+                    and its acknowledgement status.
+                </p>
+
+                <p>
+                    Caregivers should respond appropriately and contact
+                    emergency services when immediate medical assistance
+                    is required.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Epilepsy Care System. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+```

@@ -1,0 +1,293 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Invitations | Epilepsy Care</title>
+
+    <style>
+        /* GENERAL STYLING */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+        }
+
+        /* HEADER */
+        header {
+            background-color: #2457a6;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        header h1 {
+            font-size: 24px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* MAIN CONTAINER */
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 35px auto;
+        }
+
+        /* INTRODUCTION */
+        .welcome {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .welcome h2 {
+            color: #2457a6;
+            margin-bottom: 12px;
+        }
+
+        .welcome p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* INVITATION CARD */
+        .invitation-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .invitation-card h3 {
+            color: #2457a6;
+            margin-bottom: 20px;
+        }
+
+        .invitation-details {
+            background-color: #f4f7fc;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .detail {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .detail strong {
+            color: #2457a6;
+        }
+
+        /* BUTTONS */
+        .actions {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 22px;
+            border: none;
+            border-radius: 6px;
+            font-size: 15px;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .accept {
+            background-color: #2457a6;
+            color: white;
+        }
+
+        .decline {
+            background-color: #777;
+            color: white;
+        }
+
+        .btn:hover {
+            opacity: 0.85;
+        }
+
+        /* INFORMATION */
+        .information {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+
+        .information h3 {
+            color: #2457a6;
+            margin-bottom: 12px;
+        }
+
+        .information p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #2457a6;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 650px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 8px;
+            }
+
+            .container {
+                width: 92%;
+            }
+
+            .invitation-card {
+                padding: 20px;
+            }
+
+            .actions {
+                flex-direction: column;
+            }
+
+            .btn {
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Epilepsy Care System</h1>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="caregiver.html">Dashboard</a>
+        </nav>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+
+        <!-- INTRODUCTION -->
+        <section class="welcome">
+
+            <h2>Patient Invitations</h2>
+
+            <p>
+                This page allows caregivers to view invitations
+                sent by patients who wish to connect with them
+                for epilepsy care support.
+            </p>
+
+        </section>
+
+        <!-- INVITATION DETAILS -->
+        <section class="invitation-card">
+
+            <h3>Invitation Details</h3>
+
+            <div class="invitation-details">
+
+                <div class="detail">
+                    <strong>Patient Name:</strong>
+                    No invitation available
+                </div>
+
+                <div class="detail">
+                    <strong>Patient ID:</strong>
+                    Not available
+                </div>
+
+                <div class="detail">
+                    <strong>Date Received:</strong>
+                    Not available
+                </div>
+
+                <div class="detail">
+                    <strong>Invitation Status:</strong>
+                    Pending
+                </div>
+
+            </div>
+
+            <p>
+                When a patient sends you an invitation,
+                their details will appear here.
+            </p>
+
+            <br>
+
+            <div class="actions">
+
+                <button type="button" class="btn accept">
+                    Accept Invitation
+                </button>
+
+                <button type="button" class="btn decline">
+                    Decline Invitation
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- PRIVACY INFORMATION -->
+        <section class="information">
+
+            <h3>Patient Privacy</h3>
+
+            <p>
+                Accepting an invitation allows a caregiver
+                to access information that the patient has
+                authorised them to view. Patient information
+                should always be treated confidentially.
+            </p>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Epilepsy Care System. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
