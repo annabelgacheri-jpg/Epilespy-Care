@@ -1,0 +1,280 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrator Dashboard | Epilepsy Care System</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+        }
+
+        header {
+            background-color: #2457a6;
+            color: white;
+            padding: 20px 7%;
+        }
+
+        header h1 {
+            margin-bottom: 8px;
+        }
+
+        nav {
+            margin-top: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 86%;
+            max-width: 1150px;
+            margin: 35px auto;
+        }
+
+        .welcome {
+            margin-bottom: 25px;
+        }
+
+        .welcome h2 {
+            color: #2457a6;
+            margin-bottom: 10px;
+        }
+
+        .welcome p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .summary-card {
+            background-color: white;
+            padding: 22px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+        }
+
+        .summary-card h3 {
+            color: #2457a6;
+            font-size: 16px;
+            margin-bottom: 12px;
+        }
+
+        .summary-card p {
+            font-size: 26px;
+            font-weight: bold;
+        }
+
+        .section-title {
+            color: #2457a6;
+            margin-bottom: 18px;
+        }
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            text-decoration: none;
+            color: #333;
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+        }
+
+        .service-card h3 {
+            color: #2457a6;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .information {
+            background-color: white;
+            padding: 25px;
+            margin-top: 30px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            line-height: 1.7;
+        }
+
+        .information h3 {
+            color: #2457a6;
+            margin-bottom: 12px;
+        }
+
+        footer {
+            background-color: #2457a6;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 650px) {
+            .container {
+                width: 92%;
+            }
+
+            header {
+                padding: 20px 4%;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 8px 12px 0 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Epilepsy Care System</h1>
+        <p>Administrator Portal</p>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="admin.html">Dashboard</a>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section class="welcome">
+            <h2>Administrator Dashboard</h2>
+            <p>
+                Welcome to the administration panel.
+                Manage user accounts, review doctor applications,
+                maintain reference information and monitor system usage.
+            </p>
+        </section>
+
+        <section class="summary-cards">
+
+            <div class="summary-card">
+                <h3>Total Users</h3>
+                <p>120</p>
+            </div>
+
+            <div class="summary-card">
+                <h3>Doctor Applications</h3>
+                <p>8</p>
+            </div>
+
+            <div class="summary-card">
+                <h3>Active Accounts</h3>
+                <p>105</p>
+            </div>
+
+            <div class="summary-card">
+                <h3>System Reports</h3>
+                <p>15</p>
+            </div>
+
+        </section>
+
+        <h2 class="section-title">Administrator Services</h2>
+
+        <section class="services">
+
+            <a href="doctor-applications.html" class="service-card">
+                <h3>Doctor Applications</h3>
+                <p>
+                    Review doctor registration applications
+                    and their submitted professional details.
+                </p>
+            </a>
+
+            <a href="manage-accounts.html" class="service-card">
+                <h3>Manage Accounts</h3>
+                <p>
+                    View and manage patient, doctor and caregiver
+                    accounts within the system.
+                </p>
+            </a>
+
+            <a href="reference-data.html" class="service-card">
+                <h3>Reference Data</h3>
+                <p>
+                    Maintain system reference information
+                    used by different users.
+                </p>
+            </a>
+
+            <a href="errors-usage.html" class="service-card">
+                <h3>Errors and Usage</h3>
+                <p>
+                    Monitor system activity, usage information
+                    and reported technical errors.
+                </p>
+            </a>
+
+        </section>
+
+        <section class="information">
+            <h3>Administrator Responsibilities</h3>
+
+            <p>
+                The administrator oversees the general management
+                of the Epilepsy Care System.
+            </p>
+
+            <p>
+                This includes reviewing doctor applications,
+                managing user accounts, maintaining reference data
+                and monitoring system performance.
+            </p>
+
+            <p>
+                The administrator should protect user information
+                and ensure that access to the system is properly controlled.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Epilepsy Care System. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+```

@@ -1,0 +1,349 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reference Data | Epilepsy Care System</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f7fc;
+            color: #333;
+        }
+
+        header {
+            background-color: #2457a6;
+            color: white;
+            padding: 20px 7%;
+        }
+
+        header h1 {
+            margin-bottom: 8px;
+        }
+
+        nav {
+            margin-top: 15px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            width: 86%;
+            max-width: 1100px;
+            margin: 35px auto;
+        }
+
+        .heading {
+            margin-bottom: 25px;
+        }
+
+        .heading h2 {
+            color: #2457a6;
+            margin-bottom: 10px;
+        }
+
+        .heading p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+        }
+
+        .card h3 {
+            color: #2457a6;
+            margin-bottom: 18px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        textarea {
+            resize: vertical;
+        }
+
+        .add-button {
+            background-color: #2457a6;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        .add-button:hover {
+            background-color: #173d79;
+        }
+
+        .table-container {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 600px;
+        }
+
+        th, td {
+            padding: 14px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #eaf0fa;
+            color: #2457a6;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 6px 10px;
+            border-radius: 5px;
+            background-color: #d4edda;
+            color: #155724;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        .information {
+            line-height: 1.7;
+            color: #555;
+        }
+
+        footer {
+            background-color: #2457a6;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 650px) {
+            .container {
+                width: 92%;
+            }
+
+            header {
+                padding: 20px 4%;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 8px 12px 0 0;
+            }
+
+            .card {
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Epilepsy Care System</h1>
+        <p>Reference Data Management</p>
+
+        <nav>
+            <a href="../index.html">Home</a>
+            <a href="admin.html">Dashboard</a>
+            <a href="manage-accounts.html">Manage Accounts</a>
+            <a href="doctor-applications.html">Doctor Applications</a>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <section class="heading">
+            <h2>Reference Data Management</h2>
+            <p>
+                Maintain standard information used throughout
+                the Epilepsy Care System.
+            </p>
+        </section>
+
+        <section class="card">
+
+            <h3>Add Reference Information</h3>
+
+            <form>
+
+                <div class="form-group">
+                    <label for="category">Reference Category</label>
+
+                    <select id="category" name="category" required>
+                        <option value="">Select a category</option>
+                        <option value="medication">Medication Information</option>
+                        <option value="seizure">Seizure Types</option>
+                        <option value="symptom">Symptoms</option>
+                        <option value="specialization">Medical Specializations</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Reference Name</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter reference name"
+                        required
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Description</label>
+
+                    <textarea
+                        id="description"
+                        name="description"
+                        rows="4"
+                        placeholder="Enter a short description"
+                    ></textarea>
+                </div>
+
+                <button type="button" class="add-button">
+                    Add Reference Data
+                </button>
+
+            </form>
+
+        </section>
+
+        <section class="card">
+
+            <h3>Existing Reference Information</h3>
+
+            <div class="table-container">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Reference ID</th>
+                            <th>Category</th>
+                            <th>Reference Name</th>
+                            <th>Description</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td>REF001</td>
+                            <td>Seizure Type</td>
+                            <td>Focal Seizure</td>
+                            <td>Seizure beginning in one area of the brain.</td>
+                            <td>
+                                <span class="status">Active</span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>REF002</td>
+                            <td>Symptom</td>
+                            <td>Confusion</td>
+                            <td>A possible symptom experienced by a patient.</td>
+                            <td>
+                                <span class="status">Active</span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>REF003</td>
+                            <td>Specialization</td>
+                            <td>Neurology</td>
+                            <td>Medical field concerned with the nervous system.</td>
+                            <td>
+                                <span class="status">Active</span>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>REF004</td>
+                            <td>Medication Information</td>
+                            <td>Medication Example</td>
+                            <td>Sample medication reference entry.</td>
+                            <td>
+                                <span class="status">Active</span>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </section>
+
+        <section class="card">
+            <h3>Reference Data Information</h3>
+
+            <div class="information">
+                <p>
+                    Reference data provides standard information
+                    that can be used by different users of the system.
+                </p>
+
+                <p>
+                    The administrator is responsible for maintaining
+                    accurate and consistent reference information.
+                </p>
+
+                <p>
+                    Any medical reference information should be
+                    reviewed by an appropriately qualified professional
+                    before it is used to guide patient care.
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Epilepsy Care System. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
+```
