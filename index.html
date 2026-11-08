@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Epilepsy Care System</title>
+    <title>Home | Epilepsy Care System</title>
 
     <style>
 
@@ -18,10 +18,6 @@
             box-sizing: border-box;
         }
 
-        html {
-            scroll-behavior: smooth;
-        }
-
         body {
             font-family: Arial, Helvetica, sans-serif;
             background-color: #f4f7fc;
@@ -29,183 +25,207 @@
             line-height: 1.6;
         }
 
-
-        /* 2. HEADER SECTION */
+        /* 2. HEADER STYLING */
 
         header {
-            background-color: #173b65;
+            background-color: #2457a6;
             color: white;
-            padding: 20px 8%;
-
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            padding: 20px 7%;
         }
 
-        .logo h2 {
-            font-size: 25px;
+        header h1 {
+            margin-bottom: 5px;
+        }
+
+        header p {
+            font-size: 14px;
+        }
+
+        /* 3. NAVIGATION BAR */
+
+        nav {
+            margin-top: 18px;
         }
 
         nav a {
             color: white;
             text-decoration: none;
-            margin-left: 25px;
-            font-size: 15px;
+            margin-right: 22px;
+            font-weight: bold;
         }
 
         nav a:hover {
-            color: #a9d5ff;
+            text-decoration: underline;
         }
 
-
-        /* 3. WELCOME SECTION */
+        /* 4. WELCOME SECTION */
 
         .welcome {
+            background-color: white;
             text-align: center;
-            padding: 80px 20px;
-            background-color: #e3efff;
+            padding: 65px 20px;
         }
 
-        .welcome h1 {
-            font-size: 38px;
-            color: #173b65;
+        .welcome h2 {
+            color: #2457a6;
+            font-size: 32px;
             margin-bottom: 15px;
         }
 
         .welcome p {
-            max-width: 700px;
+            max-width: 750px;
             margin: 0 auto 25px;
-            font-size: 17px;
+            color: #555;
         }
 
-        .main-button {
+        .welcome-button {
             display: inline-block;
-            background-color: #1769aa;
+            background-color: #2457a6;
             color: white;
             padding: 12px 25px;
+            border-radius: 6px;
             text-decoration: none;
-            border-radius: 5px;
+            font-weight: bold;
         }
 
-        .main-button:hover {
-            background-color: #104b7c;
+        .welcome-button:hover {
+            background-color: #173e7a;
         }
 
+        /* 5. MAIN CONTENT CONTAINER */
 
-        /* 4. ABOUT SECTION */
+        .container {
+            width: 86%;
+            max-width: 1100px;
+            margin: 40px auto;
+        }
 
-        .about {
+        .section-heading {
             text-align: center;
-            padding: 50px 20px;
-        }
-
-        .about h2 {
-            color: #173b65;
-            margin-bottom: 15px;
-        }
-
-        .about p {
-            max-width: 800px;
-            margin: auto;
-        }
-
-
-        /* 5. USER ROLES SECTION */
-
-        .roles {
-            padding: 50px 8%;
-            text-align: center;
-        }
-
-        .roles h2 {
-            color: #173b65;
-            margin-bottom: 10px;
-        }
-
-        .section-description {
             margin-bottom: 30px;
         }
 
+        .section-heading h2 {
+            color: #2457a6;
+            margin-bottom: 10px;
+        }
 
-        /* 6. ROLE CARDS */
+        .section-heading p {
+            color: #666;
+        }
 
-        .role-container {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 25px;
+        /* 6. ABOUT SECTION */
+
+        .about {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .about h2 {
+            color: #2457a6;
+            margin-bottom: 12px;
+        }
+
+        .about p {
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        /* 7. USER ROLE CARDS */
+
+        .role-cards {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
         }
 
         .role-card {
             background-color: white;
-            width: 250px;
             padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
             text-align: center;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s;
+        }
+
+        .role-card:hover {
+            transform: translateY(-5px);
         }
 
         .role-card h3 {
-            color: #1769aa;
-            margin-bottom: 15px;
+            color: #2457a6;
+            margin-bottom: 12px;
         }
 
         .role-card p {
-            font-size: 14px;
+            color: #666;
             margin-bottom: 20px;
         }
 
-        .role-button {
+        .role-card a {
             display: inline-block;
-            background-color: #1769aa;
+            background-color: #2457a6;
             color: white;
-            padding: 10px 15px;
+            padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
-            font-size: 14px;
         }
 
-        .role-button:hover {
-            background-color: #104b7c;
+        .role-card a:hover {
+            background-color: #173e7a;
         }
 
+        /* 8. SYSTEM INFORMATION SECTION */
 
-        /* 7. FOOTER SECTION */
+        .information {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 40px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+        }
+
+        .information h2 {
+            color: #2457a6;
+            margin-bottom: 12px;
+        }
+
+        .information p {
+            color: #555;
+        }
+
+        /* 9. FOOTER */
 
         footer {
-            background-color: #173b65;
+            background-color: #2457a6;
             color: white;
             text-align: center;
-            padding: 20px;
-            margin-top: 40px;
+            padding: 18px;
+            margin-top: 45px;
         }
 
+        /* 10. RESPONSIVE DESIGN */
 
-        /* 8. RESPONSIVE DESIGN */
+        @media (max-width: 700px) {
 
-        @media (max-width: 600px) {
+            .container {
+                width: 92%;
+            }
 
-            header {
-                flex-direction: column;
-                gap: 15px;
+            .role-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .welcome h2 {
+                font-size: 25px;
             }
 
             nav a {
-                margin: 0 8px;
-            }
-
-            .welcome h1 {
-                font-size: 28px;
-            }
-
-            .role-container {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .role-card {
-                width: 100%;
-                max-width: 350px;
+                display: inline-block;
+                margin: 8px 12px 0 0;
             }
 
         }
@@ -214,47 +234,57 @@
 
 </head>
 
-
 <body>
 
-    <!-- HEADER SECTION -->
+    <!-- HEADER -->
 
     <header>
 
-        <div class="logo">
-            <h2>Epilepsy Care</h2>
-        </div>
+        <h1>Epilepsy Care System</h1>
+
+        <p>
+            Supporting epilepsy management through organised
+            health information and communication.
+        </p>
+
+        <!-- NAVIGATION BAR -->
 
         <nav>
+
             <a href="index.html">Home</a>
+
             <a href="#about">About</a>
-            <a href="#roles">User Roles</a>
+
+            <a href="#user-roles">User Sections</a>
+
         </nav>
 
     </header>
 
 
+    <!-- WELCOME SECTION -->
+
+    <section class="welcome">
+
+        <h2>Welcome to the Epilepsy Care System</h2>
+
+        <p>
+            The Epilepsy Care System is designed to support patients
+            in managing their medication, health records and care
+            activities while enabling communication with doctors
+            and caregivers.
+        </p>
+
+        <a href="#user-roles" class="welcome-button">
+            Explore User Sections
+        </a>
+
+    </section>
+
+
     <!-- MAIN CONTENT -->
 
-    <main>
-
-
-        <!-- WELCOME SECTION -->
-
-        <section class="welcome">
-
-            <h1>Welcome to Epilepsy Care</h1>
-
-            <p>
-                A digital healthcare support system designed to help
-                individuals manage epilepsy through medication tracking,
-                health records and communication with caregivers and doctors.
-            </p>
-
-            <a href="#roles" class="main-button">Get Started</a>
-
-        </section>
-
+    <main class="container">
 
 
         <!-- ABOUT SECTION -->
@@ -264,28 +294,45 @@
             <h2>About the System</h2>
 
             <p>
-                Epilepsy Care is a web-based system that supports epilepsy
-                management by providing tools for medication monitoring,
-                health record management and communication between patients,
+                The Epilepsy Care System provides a platform for
+                organising epilepsy-related information and
+                supporting communication between patients,
                 doctors and caregivers.
+            </p>
+
+            <p>
+                Patients can manage medication information,
+                record health activities and request assistance.
+                Doctors can review shared patient summaries and
+                record consultation information.
+            </p>
+
+            <p>
+                Caregivers can respond to help requests and monitor
+                medication dose status, while system administrators
+                manage user accounts and monitor system activities.
             </p>
 
         </section>
 
 
+        <!-- USER ROLE SECTION -->
 
-        <!-- USER ROLES SECTION -->
+        <section id="user-roles">
 
-        <section class="roles" id="roles">
+            <div class="section-heading">
 
-            <h2>Select Your Role</h2>
+                <h2>Select Your User Section</h2>
 
-            <p class="section-description">
-                Choose the appropriate section to access the system.
-            </p>
+                <p>
+                    Choose the section that corresponds to your
+                    role in the Epilepsy Care System.
+                </p>
+
+            </div>
 
 
-            <div class="role-container">
+            <div class="role-cards">
 
 
                 <!-- PATIENT CARD -->
@@ -295,16 +342,16 @@
                     <h3>Patient</h3>
 
                     <p>
-                        Manage medication schedules, record health information
-                        and access personal health summaries.
+                        Manage medication information, record
+                        health activities, report side effects,
+                        request help and view personal records.
                     </p>
 
-                    <a href="patient/patient.html" class="role-button">
-                        Continue as Patient
+                    <a href="patient/patient.html">
+                        Patient Dashboard
                     </a>
 
                 </div>
-
 
 
                 <!-- DOCTOR CARD -->
@@ -314,16 +361,16 @@
                     <h3>Doctor</h3>
 
                     <p>
-                        Access shared patient summaries and review relevant
-                        health information.
+                        Access shared patient summaries,
+                        review health information and record
+                        consultation notes.
                     </p>
 
-                    <a href="doctor/doctor.html" class="role-button">
-                        Continue as Doctor
+                    <a href="doctor/doctor.html">
+                        Doctor Dashboard
                     </a>
 
                 </div>
-
 
 
                 <!-- CAREGIVER CARD -->
@@ -333,31 +380,32 @@
                     <h3>Caregiver</h3>
 
                     <p>
-                        View patient assistance requests and monitor
-                        medication status.
+                        Accept patient invitations, respond
+                        to help requests and monitor medication
+                        dose status.
                     </p>
 
-                    <a href="caregiver/caregiver.html" class="role-button">
-                        Continue as Caregiver
+                    <a href="caregiver/caregiver.html">
+                        Caregiver Dashboard
                     </a>
 
                 </div>
-
 
 
                 <!-- ADMINISTRATOR CARD -->
 
                 <div class="role-card">
 
-                    <h3>Administrator</h3>
+                    <h3>System Administrator</h3>
 
                     <p>
-                        Manage user accounts, doctor applications
-                        and system information.
+                        Manage user accounts, review doctor
+                        applications, manage reference data
+                        and monitor system usage.
                     </p>
 
-                    <a href="admin/admin.html" class="role-button">
-                        Continue as Administrator
+                    <a href="admin/admin.html">
+                        Administrator Dashboard
                     </a>
 
                 </div>
@@ -368,16 +416,32 @@
         </section>
 
 
+        <!-- SYSTEM INFORMATION -->
+
+        <section class="information">
+
+            <h2>System Information</h2>
+
+            <p>
+                This system is intended to support the organisation
+                and management of epilepsy care information.
+                Access to patient information should be controlled
+                to protect privacy and confidentiality.
+            </p>
+
+        </section>
+
+
     </main>
 
 
-
-    <!-- FOOTER SECTION -->
+    <!-- FOOTER -->
 
     <footer>
 
         <p>
-            &copy; 2026 Epilepsy Care System. All Rights Reserved.
+            &copy; 2026 Epilepsy Care System.
+            All Rights Reserved.
         </p>
 
     </footer>
@@ -386,3 +450,4 @@
 </body>
 
 </html>
+```
