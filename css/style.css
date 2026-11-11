@@ -1,399 +1,1107 @@
 
-/*  1. GENERAL PAGE STYLING */
+/* =====================================================
+   1. GENERAL PAGE STYLING
+   Applies to the entire Epilepsy Care System
+===================================================== */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 20px;
-}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     background-color: #f4f7fc;
-    color: purple;
+    color: #333;
     line-height: 1.6;
 }
-/*   2. MAIN PAGE LAYOUT*/
-.container {
-    display: flex;
-    min-height: 100vh;
-}
 
-/* 3. SIDEBAR*/
 
-.sidebar {
-    width: 260px;
-    min-height: 100vh;
-    background-color: purple;
+/* =====================================================
+   2. HOMEPAGE STYLING
+===================================================== */
+
+/* HEADER */
+
+.home-page header {
+    background-color: #2457a6;
     color: white;
-    padding: 25px 18px;
-    flex-shrink: 0;
+    padding: 20px 7%;
 }
 
-.sidebar h2 {
-    font-size: 25px;
+.home-page header h1 {
     margin-bottom: 5px;
-    color:purple;
 }
 
-.sidebar p {
-    font-size: 13px;
-    color: #d8e4ff;
+.home-page header p {
+    font-size: 14px;
+}
+
+
+/* NAVIGATION */
+
+.home-page nav {
+    margin-top: 18px;
+}
+
+.home-page nav a {
+    color: white;
+    text-decoration: none;
+    margin-right: 22px;
+    font-weight: bold;
+}
+
+.home-page nav a:hover {
+    text-decoration: underline;
+}
+
+
+/* WELCOME SECTION */
+
+.home-page .welcome {
+    background-color: white;
+    text-align: center;
+    padding: 65px 20px;
+}
+
+.home-page .welcome h2 {
+    color: #2457a6;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.home-page .welcome p {
+    max-width: 750px;
+    margin: 0 auto 25px;
+    color: #555;
+}
+
+.home-page .welcome-button {
+    display: inline-block;
+    background-color: #2457a6;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.home-page .welcome-button:hover {
+    background-color: #173e7a;
+}
+
+
+/* MAIN CONTENT CONTAINER */
+
+.home-page .container {
+    width: 86%;
+    max-width: 1100px;
+    margin: 40px auto;
+}
+
+.home-page .section-heading {
+    text-align: center;
     margin-bottom: 30px;
 }
 
-.sidebar nav ul {
-    list-style: none;
-}
-
-.sidebar nav li {
-    margin-bottom: 12px;
-}
-
-.sidebar nav a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 12px;
-    border-radius: 8px;
-    font-size: 14px;
-    transition: background-color 0.3s;
-}
-
-.sidebar nav a:hover,
-.sidebar nav a.active {
-    background-color: #4779e5;
-}
-
-.sidebar .sidebar-note {
-    margin-top: 70px;
-    text-align: center;
-    font-style: italic;
-    color: #bdceff;
-    line-height: 1.8;
-}
-/*  4. MAIN CONTENT */
-
-.main-content {
-    flex: 1;
-    min-width: 0;
-    padding: 30px;
-}
-
-/* 5. PAGE HEADER */
-
-.page-header {
-    margin-bottom: 25px;
-    padding-bottom: 18px;
-    border-bottom: 1px solid #dce5f5;
-}
-
-.page-header h2 {
-    font-size: 24px;
-    margin-bottom: 5px;
-}
-
-.page-header p {
-    color: #647895;
-}
-
-/* 6. WELCOME SECTION*/
-
-.welcome {
-    background-color: #e5edff;
-    padding: 32px;
-    border-radius: 15px;
-    margin-bottom: 28px;
-    border: 1px solid #d3e0ff;
-}
-
-.welcome h1 {
-    font-size: 30px;
-    color: #173568;
-    margin-bottom: 12px;
-}
-
-.welcome p {
-    font-size: 16px;
-    color: #526b94;
-    margin-bottom: 5px;
-}
-
-
-/* 7. FEATURE CARDS LAYOUT*/
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
-    align-items: stretch;
-}
-
-
-/* 8. INDIVIDUAL FEATURE CARDS*/
-
-.card {
-    background-color: white;
-    padding: 24px;
-    border: 1px solid #dce5f5;
-    border-radius: 14px;
-    box-shadow: 0 4px 12px rgba(23, 53, 104, 0.06);
-
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-
-    scroll-margin-top: 20px;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 18px rgba(23, 53, 104, 0.10);
-}
-
-.card h2 {
-    font-size: 20px;
-    color: #173568;
+.home-page .section-heading h2 {
+    color: #2457a6;
     margin-bottom: 10px;
 }
 
-.card p {
-    color: #596b86;
-    font-size: 15px;
+.home-page .section-heading p {
+    color: #666;
+}
+
+
+/* ABOUT SECTION */
+
+.home-page .about {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.home-page .about h2 {
+    color: #2457a6;
+    margin-bottom: 12px;
+}
+
+.home-page .about p {
+    color: #555;
+    margin-bottom: 10px;
+}
+
+
+/* USER ROLE CARDS */
+
+.home-page .role-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.home-page .role-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s;
+}
+
+.home-page .role-card:hover {
+    transform: translateY(-5px);
+}
+
+.home-page .role-card h3 {
+    color: #2457a6;
+    margin-bottom: 12px;
+}
+
+.home-page .role-card p {
+    color: #666;
     margin-bottom: 20px;
 }
-/*  9. FEATURE CARD COLOURS */
-.quick-assist {
-    border-top: 5px solid #4169e1;
-}
-.medication {
-    border-top: 5px solid #21a58a;
-}
 
-.side-effects {
-    border-top: 5px solid #b04caf;
-}
-
-.consultation {
-    border-top: 5px solid #5080df;
-}
-
-.seizure-log {
-    border-top: 5px solid #8252ce;
-}
-
-.settings {
-    border-top: 5px solid #20a4ae;
-}
-/*  10. BUTTONS */
-.button {
+.home-page .role-card a {
     display: inline-block;
-    background-color: #4169e1;
+    background-color: #2457a6;
     color: white;
-
-    padding: 11px 20px;
-    border: none;
-    border-radius: 25px;
-
+    padding: 10px 20px;
     text-decoration: none;
-    text-align: center;
-    font-family: inherit;
-    font-size: 14px;
-    font-weight: bold;
-
-    cursor: pointer;
-    margin-top: auto;
-    transition: background-color 0.3s;
-}
-
-.button:hover {
-    background-color: #294fbd;
-}
-
-.button:focus-visible,
-.sidebar a:focus-visible {
-    outline: 3px solid #91b6ff;
-    outline-offset: 3px;
-}
-
-
-/* 11. CONTENT SECTIONS AND FORMS */
-
-.content-section {
-    background-color: white;
-    padding: 28px;
-    margin-top: 30px;
-
-    border: 1px solid #dce5f5;
-    border-radius: 14px;
-
-    box-shadow: 0 4px 12px rgba(23, 53, 104, 0.05);
-    scroll-margin-top: 20px;
-}
-
-.content-section h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-    color: purple;
-}
-
-.content-section > p {
-    color: #596b86;
-    margin-bottom: 18px;
-}
-/*  12. FORM LABELS */
-form {
-    width: 100%;
-}
-
-label {
-    display: block;
-    margin: 16px 0 6px;
-    font-weight: bold;
-    font-size: 14px;
-    color: #173568;
-}
-
-
-/*  13. INPUT FIELDS*/
-
-input,
-select,
-textarea {
-    display: block;
-    width: 100%;
-
-    padding: 12px;
-    border: 1px solid #ccd6e5;
-    border-radius: 7px;
-
-    font-family: inherit;
-    font-size: 15px;
-    color: #263b5b;
-    background-color: white;
-}
-
-input:focus,
-select:focus,
-textarea:focus {
-    outline: none;
-    border-color: purple;
-    box-shadow: 0 0 0 3px rgba(65, 105, 225, 0.12);
-}
-
-textarea {
-    min-height: 100px;
-    resize: vertical;
-}
-
-form .button {
-    margin-top: 22px;
-}
-
-
-/*  14. NOTICE MESSAGES*/
-.notice {
-    background-color: #fff7e6;
-    border-left: 4px solid #e3a52c;
-    padding: 12px 15px;
-    margin-top: 20px;
-
-    color: #72551b;
-    font-size: 14px;
     border-radius: 5px;
 }
 
+.home-page .role-card a:hover {
+    background-color: #173e7a;
+}
 
-/*15. CONSULTATION SUMMARY CARDS*/
-.summary-card {
-    background-color: #f7f9ff;
-    border: 1px solid #e0e8f8;
+
+/* SYSTEM INFORMATION */
+
+.home-page .information {
+    background-color: white;
+    padding: 25px;
     border-radius: 10px;
+    margin-top: 40px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
 
+.home-page .information h2 {
+    color: #2457a6;
+    margin-bottom: 12px;
+}
+
+.home-page .information p {
+    color: #555;
+}
+
+
+/* HOMEPAGE FOOTER */
+
+.home-page footer {
+    background-color: #2457a6;
+    color: white;
+    text-align: center;
     padding: 18px;
-    margin-top: 15px;
+    margin-top: 45px;
 }
 
-.summary-card h3 {
-    color: purple;
-    font-size: 17px;
-    margin-bottom: 8px;
+
+/* =====================================================
+   3. PATIENT DASHBOARD STYLING
+===================================================== */
+
+/* HEADER */
+
+.patient-page header {
+    background-color: #173b65;
+    color: white;
+    padding: 18px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.summary-card p {
-    color: purple;
+.patient-page .logo h2 {
+    font-size: 24px;
+}
+
+.patient-page header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
     font-size: 14px;
 }
 
+.patient-page header nav a:hover {
+    color: #a9d5ff;
+}
 
-/*16. FOOTER */
-footer {
+
+/* MAIN CONTAINER */
+
+.patient-page .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+
+/* WELCOME SECTION */
+
+.patient-page .welcome {
+    background-color: #e3efff;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.patient-page .welcome h1 {
+    color: #173b65;
+    margin-bottom: 10px;
+}
+
+.patient-page .welcome p {
+    font-size: 15px;
+}
+
+
+/* SECTION HEADINGS */
+
+.patient-page .section-heading {
+    color: #173b65;
+    margin-bottom: 20px;
+}
+
+
+/* MEDICATION SCHEDULE */
+
+.patient-page .schedule-section {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.patient-page .schedule-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 15px;
+}
+
+.patient-page .schedule-header h2 {
+    color: #173b65;
+}
+
+.patient-page .add-button {
+    background-color: #1769aa;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.patient-page .add-button:hover {
+    background-color: #104b7c;
+}
+
+.patient-page table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.patient-page th,
+.patient-page td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.patient-page th {
+    background-color: #eef4fc;
+    color: #173b65;
+}
+
+.patient-page .empty-message {
     text-align: center;
-    margin-top: 35px;
-    padding: 22px;
+    color: #777;
+    padding: 25px;
+}
 
-    border-top: 1px solid #dce5f5;
-    color: purple;
+
+/* PATIENT SERVICES */
+
+.patient-page .features {
+    margin-bottom: 30px;
+}
+
+.patient-page .feature-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.patient-page .feature-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid #1769aa;
+}
+
+.patient-page .feature-card h3 {
+    color: #173b65;
+    margin-bottom: 10px;
+}
+
+.patient-page .feature-card p {
+    font-size: 14px;
+    margin-bottom: 18px;
+}
+
+.patient-page .feature-link {
+    display: inline-block;
+    background-color: #1769aa;
+    color: white;
+    padding: 9px 14px;
+    border-radius: 5px;
+    text-decoration: none;
     font-size: 13px;
 }
-/* 17. TABLET SCREEN*/
-@media (max-width: 1100px) {
-    .sidebar {
-        width: 230px;
-    }
 
-    .main-content {
-        padding: 22px;
-    }
-
-    .cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 18px;
-    }
-
+.patient-page .feature-link:hover {
+    background-color: #104b7c;
 }
-/* 18. MOBILE SCREEN */
+
+
+/* PATIENT FOOTER */
+
+.patient-page footer {
+    background-color: #173b65;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+
+/* =====================================================
+   4. RESPONSIVE DESIGN
+===================================================== */
+
+/* HOMEPAGE RESPONSIVE DESIGN */
+
 @media (max-width: 700px) {
 
-    .container {
-        flex-direction: column;
+    .home-page .container {
+        width: 92%;
     }
 
-    .sidebar {
-        width: 100%;
-        min-height: auto;
-        padding: 20px;
-    }
-
-    .sidebar .sidebar-note {
-        margin-top: 25px;
-    }
-
-    .main-content {
-        padding: 16px;
-    }
-
-    .cards {
+    .home-page .role-cards {
         grid-template-columns: 1fr;
     }
 
-    .welcome {
-        padding: 22px;
+    .home-page .welcome h2 {
+        font-size: 25px;
     }
 
-    .welcome h1 {
-        font-size: 24px;
+    .home-page nav a {
+        display: inline-block;
+        margin: 8px 12px 0 0;
+    }
+}
+
+
+/* PATIENT RESPONSIVE DESIGN */
+
+@media (max-width: 800px) {
+
+    .patient-page .feature-container {
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .content-section {
-        padding: 20px;
+}
+
+@media (max-width: 550px) {
+
+    .patient-page header {
+        flex-direction: column;
+        gap: 12px;
     }
 
-    .page-header h2 {
-        font-size: 21px;
+    .patient-page header nav a {
+        margin: 0 7px;
     }
 
+    .patient-page .feature-container {
+        grid-template-columns: 1fr;
+    }
+
+    .patient-page .schedule-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .patient-page .container {
+        width: 94%;
+    }
+
+    .patient-page th,
+    .patient-page td {
+        padding: 9px;
+        font-size: 12px;
+    }
+}
+
+/* =====================================================
+   5. DOCTOR DASHBOARD STYLING
+===================================================== */
+
+/* HEADER */
+
+.doctor-page header {
+    background-color: #173b65;
+    color: white;
+    padding: 18px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.doctor-page header h1 {
+    font-size: 24px;
+}
+
+.doctor-page header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 18px;
+    font-size: 14px;
+}
+
+.doctor-page header nav a:hover {
+    color: #a9d5ff;
+}
+
+
+/* MAIN CONTAINER */
+
+.doctor-page .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+
+/* WELCOME SECTION */
+
+.doctor-page .welcome {
+    background-color: #e3efff;
+    padding: 30px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.doctor-page .welcome h2 {
+    color: #173b65;
+    margin-bottom: 10px;
+}
+
+.doctor-page .welcome p {
+    font-size: 15px;
+}
+
+
+/* SUMMARY CARDS */
+
+.doctor-page .summary-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.doctor-page .summary-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid #1769aa;
+}
+
+.doctor-page .summary-card h3 {
+    color: #173b65;
+    margin-bottom: 12px;
+    font-size: 17px;
+}
+
+.doctor-page .summary-card p {
+    color: #1769aa;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+
+/* DOCTOR SECTIONS */
+
+.doctor-page .section {
+    background-color: white;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+}
+
+.doctor-page .section h2 {
+    color: #173b65;
+    margin-bottom: 12px;
+}
+
+.doctor-page .section p {
+    margin-bottom: 20px;
+}
+
+
+/* PATIENT SUMMARIES TABLE */
+
+.doctor-page table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.doctor-page th,
+.doctor-page td {
+    padding: 14px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+.doctor-page th {
+    background-color: #eef4fc;
+    color: #173b65;
+}
+
+.doctor-page td[colspan] {
+    text-align: center;
+    color: #777;
+    padding: 25px;
+}
+
+
+/* CONSULTATION NOTE FORM */
+
+.doctor-page .form-group {
+    margin-bottom: 20px;
+}
+
+.doctor-page .form-group label {
+    display: block;
+    color: #173b65;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.doctor-page .form-group input,
+.doctor-page .form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+}
+
+.doctor-page .form-group textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+.doctor-page .btn {
+    background-color: #1769aa;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.doctor-page .btn:hover {
+    background-color: #104b7c;
+}
+
+
+/* DOCTOR FOOTER */
+
+.doctor-page footer {
+    background-color: #173b65;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+
+/* DOCTOR RESPONSIVE DESIGN */
+
+@media (max-width: 800px) {
+
+    .doctor-page .summary-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 550px) {
+
+    .doctor-page header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .doctor-page header nav a {
+        display: inline-block;
+        margin: 5px 7px;
+    }
+
+    .doctor-page .summary-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .doctor-page .container {
+        width: 94%;
+    }
+
+    .doctor-page .section {
+        padding: 18px;
+    }
+
+    .doctor-page th,
+    .doctor-page td {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+}
+
+/* =========================================
+   CAREGIVER DASHBOARD STYLING
+========================================= */
+
+.caregiver-page {
+    background-color: #f4f7fc;
+    color: #333;
+}
+
+/* HEADER */
+
+.caregiver-page header {
+    background-color: #173b65;
+    color: white;
+    padding: 20px 30px;
+    text-align: center;
+}
+
+.caregiver-page header h1 {
+    margin-bottom: 15px;
+}
+
+.caregiver-page nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.caregiver-page nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.caregiver-page nav a:hover {
+    color: #b9dcff;
+}
+
+/* MAIN CONTAINER */
+
+.caregiver-page .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 30px auto;
+}
+
+/* WELCOME SECTION */
+
+.caregiver-page .welcome {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.caregiver-page .welcome h2 {
+    color: #173b65;
+    margin-bottom: 10px;
+}
+
+/* SUMMARY CARDS */
+
+.caregiver-page .summary-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.caregiver-page .summary-card {
+    background-color: white;
+    padding: 25px;
+    text-align: center;
+    border-radius: 10px;
+    border-left: 5px solid #1769aa;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.caregiver-page .summary-card h3 {
+    color: #173b65;
+    margin-bottom: 10px;
+}
+
+.caregiver-page .summary-card p {
+    color: #1769aa;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* SECTION TITLE */
+
+.caregiver-page .section-title {
+    color: #173b65;
+    margin-bottom: 15px;
+}
+
+/* SERVICE CARDS */
+
+.caregiver-page .service-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.caregiver-page .service-card {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.caregiver-page .service-card h3 {
+    color: #173b65;
+    margin-bottom: 10px;
+}
+
+.caregiver-page .service-card p {
+    margin-bottom: 18px;
+}
+
+/* BUTTONS */
+
+.caregiver-page .btn {
+    display: inline-block;
+    background-color: #1769aa;
+    color: white;
+    text-decoration: none;
+    padding: 10px 18px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.caregiver-page .btn:hover {
+    background-color: #173b65;
+}
+
+/* HELP REQUESTS TABLE */
+
+.caregiver-page .requests-section {
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    overflow-x: auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.caregiver-page .requests-section h2 {
+    color: #173b65;
+    margin-bottom: 15px;
+}
+
+.caregiver-page table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.caregiver-page th,
+.caregiver-page td {
+    padding: 14px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+.caregiver-page th {
+    background-color: #e3efff;
+    color: #173b65;
+}
+
+.caregiver-page td[colspan="4"] {
+    text-align: center;
+}
+
+/* INFORMATION SECTION */
+
+.caregiver-page .information {
+    background-color: #e3efff;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.caregiver-page .information h2 {
+    color: #173b65;
+    margin-bottom: 10px;
+}
+
+/* FOOTER */
+
+.caregiver-page footer {
+    background-color: #173b65;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 30px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 800px) {
+    .caregiver-page .summary-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    .caregiver-page .summary-cards,
+    .caregiver-page .service-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .caregiver-page .container {
+        width: 95%;
+    }
+
+    .caregiver-page nav {
+        gap: 12px;
+    }
+
+    .caregiver-page .requests-section {
+        padding: 15px;
+    }
+}
+
+/* =========================================
+   ADMINISTRATOR DASHBOARD STYLING
+========================================= */
+
+.admin-page {
+    background-color: #f4f7fc;
+    color: #333;
+}
+
+/* HEADER */
+
+.admin-page header {
+    background-color: #173b65;
+    color: white;
+    padding: 20px 7%;
+}
+
+.admin-page header h1 {
+    margin-bottom: 8px;
+}
+
+.admin-page header p {
+    color: #e3efff;
+}
+
+.admin-page nav {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.admin-page nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.admin-page nav a:hover {
+    color: #b9dcff;
+    text-decoration: underline;
+}
+
+/* MAIN CONTAINER */
+
+.admin-page .container {
+    width: 86%;
+    max-width: 1150px;
+    margin: 35px auto;
+}
+
+/* WELCOME SECTION */
+
+.admin-page .welcome {
+    margin-bottom: 25px;
+}
+
+.admin-page .welcome h2 {
+    color: #173b65;
+    margin-bottom: 10px;
+}
+
+.admin-page .welcome p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* SUMMARY CARDS */
+
+.admin-page .summary-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.admin-page .summary-card {
+    background-color: white;
+    padding: 22px;
+    border-radius: 10px;
+    border-left: 5px solid #1769aa;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.admin-page .summary-card h3 {
+    color: #173b65;
+    font-size: 16px;
+    margin-bottom: 12px;
+}
+
+.admin-page .summary-card p {
+    color: #1769aa;
+    font-size: 26px;
+    font-weight: bold;
+}
+
+/* SECTION TITLE */
+
+.admin-page .section-title {
+    color: #173b65;
+    margin-bottom: 18px;
+}
+
+/* ADMINISTRATOR SERVICES */
+
+.admin-page .services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.admin-page .service-card {
+    display: block;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    text-decoration: none;
+    color: #333;
+    transition: 0.3s;
+}
+
+.admin-page .service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+}
+
+.admin-page .service-card h3 {
+    color: #173b65;
+    margin-bottom: 12px;
+}
+
+.admin-page .service-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* INFORMATION SECTION */
+
+.admin-page .information {
+    background-color: white;
+    padding: 25px;
+    margin-top: 30px;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    line-height: 1.7;
+}
+
+.admin-page .information h3 {
+    color: #173b65;
+    margin-bottom: 12px;
+}
+
+.admin-page .information p {
+    margin-bottom: 10px;
+}
+
+/* FOOTER */
+
+.admin-page footer {
+    background-color: #173b65;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 40px;
+}
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 650px) {
+    .admin-page .container {
+        width: 92%;
+    }
+
+    .admin-page header {
+        padding: 20px 4%;
+    }
+
+    .admin-page nav {
+        gap: 12px;
+    }
 }
