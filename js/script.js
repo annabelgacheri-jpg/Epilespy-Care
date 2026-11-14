@@ -1,4 +1,3 @@
-
 // ======================================
 // EPILEPSY CARE SYSTEM
 // Main JavaScript File
@@ -28,7 +27,7 @@ if (caregiverLoginForm) {
             return;
         }
 
-        alert("Caregiver login form has been validated successfully!");
+       window.location.href = "caregiver.html";
 
     });
 
@@ -57,8 +56,7 @@ if (patientLoginForm) {
             return;
         }
 
-        alert("Patient login form has been validated successfully!");
-
+       window.location.href = "patient.html";
     });
 
 }
@@ -87,7 +85,7 @@ if (doctorLoginForm) {
             return;
         }
 
-        alert("Doctor login form has been validated successfully!");
+         window.location.href = "doctor.html";
 
     });
 
@@ -118,8 +116,7 @@ if (adminLoginForm) {
             return;
         }
 
-        alert("Administrator login form has been validated successfully!");
-
+        window.location.href = "admin.html";
     });
 
 }
