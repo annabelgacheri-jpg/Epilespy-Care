@@ -1,29 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Caregiver Dashboard | Epilepsy Care</title>
 
-   
+    <!-- LINK TO EXTERNAL CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
 </head>
 
 <body class="caregiver-page">
-    
-<link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
     <!-- HEADER -->
     <header>
         <h1>Epilepsy Care System</h1>
-
-<nav>
-    <a href="../index.html">Home</a>
-    <a href="caregiver.html">Dashboard</a>
-    <a href="accept-invitation.html">Invitations</a>
-    <a href="help-requests.html">Help Requests</a>
-    <a href="dose-status.html">Dose Status</a>
-    <a href="login.html">Login</a>
+ <nav>
+    <a href="{{ url_for('home') }}">Home</a>
+    <a href="{{ url_for('caregiver') }}">Dashboard</a>
+    <a href="{{ url_for('accept_invitation') }}">Invitations</a>
+    <a href="{{ url_for('help_request') }}">Help Requests</a>
+    <a href="{{ url_for('dose_status') }}">Dose Status</a>
+    <a href="{{ url_for('caregiver_login') }}">Login</a>
 </nav>
-
     </header>
 
     <!-- MAIN CONTENT -->

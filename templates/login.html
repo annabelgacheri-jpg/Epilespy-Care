@@ -9,7 +9,7 @@
     <title>Login | Epilepsy Care System</title>
 
     <!-- Linking external CSS -->
-    <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body class="login-page">
@@ -84,9 +84,7 @@
                 Don't have an account?
                 Contact your system administrator.
             </p>
-
-            <a href="index.html">Back to Home</a>
-
+<a href="{{ url_for('home') }}">Back to Home</a>
         </section>
 
     </main>
@@ -102,6 +100,5 @@
 
     </footer>
 
-<script src="js/script.js"></script>
 </body>
 </html>

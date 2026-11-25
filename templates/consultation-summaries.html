@@ -185,11 +185,11 @@
     <header>
         <h1>Epilepsy Care System</h1>
 
-        <nav>
-            <a href="../index.html">Home</a>
-            <a href="doctor.html">Dashboard</a>
-            <a href="shared-summaries.html">Patient Summaries</a>
-        </nav>
+       <nav>
+    <a href="{{ url_for('home') }}">Home</a>
+    <a href="{{ url_for('doctor') }}">Dashboard</a>
+    <a href="{{ url_for('shared_summaries') }}">Patient Summaries</a>
+</nav>
     </header>
 
     <!-- MAIN CONTENT -->

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrator Dashboard | Epilepsy Care System</title>
-<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 
 <body class="admin-page">
@@ -13,12 +13,12 @@
         <h1>Epilepsy Care System</h1>
         <p>Administrator Portal</p>
 <nav>
-    <a href="../index.html">Home</a>
-    <a href="admin.html">Dashboard</a>
-    <a href="doctor-applications.html">Doctor Applications</a>
-    <a href="manage-accounts.html">Manage Accounts</a>
-    <a href="reference-data.html">Reference Data</a>
-    <a href="errors-usage.html">Errors and Usage</a>
+ <a href="{{ url_for('home') }}">Home</a>
+    <a href="{{ url_for('admin') }}">Dashboard</a>
+    <a href="{{ url_for('doctor_applications') }}">Doctor Applications</a>
+    <a href="{{ url_for('manage_accounts') }}">Manage Accounts</a>
+    <a href="{{ url_for('reference_data') }}">Reference Data</a>
+    <a href="{{ url_for('errors_usage') }}">Errors and Usage</a>
 </nav>
 
     </header>
@@ -62,7 +62,7 @@
 
         <section class="services">
 
-            <a href="doctor-applications.html" class="service-card">
+<a href="{{ url_for('doctor_applications') }}" class="service-card"></a>>
                 <h3>Doctor Applications</h3>
                 <p>
                     Review doctor registration applications
@@ -70,7 +70,7 @@
                 </p>
             </a>
 
-            <a href="manage-accounts.html" class="service-card">
+            <a href="{{ url_for('manage_accounts') }}" class="service-card">
                 <h3>Manage Accounts</h3>
                 <p>
                     View and manage patient, doctor and caregiver
@@ -78,7 +78,7 @@
                 </p>
             </a>
 
-            <a href="reference-data.html" class="service-card">
+            <a href="{{ url_for('reference_data') }}" class="service-card"> 
                 <h3>Reference Data</h3>
                 <p>
                     Maintain system reference information
@@ -86,7 +86,7 @@
                 </p>
             </a>
 
-            <a href="errors-usage.html" class="service-card">
+            <a href="{{ url_for('errors_usage') }}" class="service-card">
                 <h3>Errors and Usage</h3>
                 <p>
                     Monitor system activity, usage information
